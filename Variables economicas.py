@@ -16,6 +16,6 @@ data = response.json()
 
 results = data['results']
 
-pv = pd.DataFrame(results)
+listado_variables = pd.DataFrame(results)
 
-print(pv.head())
+print(listado_variables.head())
