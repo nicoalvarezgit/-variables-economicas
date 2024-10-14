@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 pandas = "^2.2.3"
 requests = "^2.32.3"
+certifi = "^2024.8.30"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"

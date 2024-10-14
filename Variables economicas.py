@@ -11,7 +11,7 @@ import pandas as pd
 
 url = "https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables"
 
-response = requests.get(url)
+response = requests.get(url, verify=False)
 data = response.json()
 
 results = data['results']
