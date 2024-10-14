@@ -17,7 +17,21 @@ user = os.getenv('REDSHIFT_USER')
 password = os.getenv('REDSHIFT_PASSWORD')
 host = os.getenv('REDSHIFT_HOST')
 port = os.getenv('REDSHIFT_PORT')
-database = os.getenv('REDSHIFT_DB')
+database = os.getenv('REDSHIFT_DB') 
+
+from sqlalchemy import create_engine
+
+connection_string = f"postgresql://{user}:{password}@{host}:{port}/{database}"
+
+engine = create_engine(connection_string)
+
+try:
+    with engine.connect() as connection:
+        print ("Conexión a Redshift exitosa!")
+        #agregar una condición
+except Exception as e:
+    print(f"Error de conexión a Resdhift: {e}")
+
 
 url = "https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables"
 
