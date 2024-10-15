@@ -1,17 +1,18 @@
 [tool.poetry]
 name = "variables-economicas"
 version = "0.1.0"
-description = "\"Conexión con API para variables económicas\""
-authors = ["Nicolas Alvarez Julia <niconte3500@hotmail.com>"]
+description = "Conexión con API para variables económicas"
+authors = ["nico <niconte3500@hotmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.11,<3.13"
 pandas = "^2.2.3"
 requests = "^2.32.3"
 certifi = "^2024.8.30"
 python-dotenv = "^1.0.1"
-sqlalchemy = "^2.0.35"
+SQLAlchemy = ">=1.4.36,<2.0"
+apache-airflow = "^2.10.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
