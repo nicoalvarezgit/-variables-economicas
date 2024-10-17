@@ -13,6 +13,10 @@ certifi = "^2024.8.30"
 python-dotenv = "^1.0.1"
 SQLAlchemy = ">=1.4.36,<2.0"
 apache-airflow = "^2.10.2"
+psycopg2 = "^2.9.10"
+sqlalchemy-redshift = "^0.8.14"
+pyarrow = "^17.0.0"
+fastparquet = "^2024.5.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"

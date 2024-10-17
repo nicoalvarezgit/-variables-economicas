@@ -6,7 +6,7 @@ from airflow.operators.python import PythonOperator
 from airflow.exceptions import AirflowSkipException
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
-from etl_functions import extract_data, transform_data, load_to_redshift
+from scripts import extract_data, transform_data, load_to_redshift
 
 # Se cargan las variables del archivo .env
 load_dotenv()

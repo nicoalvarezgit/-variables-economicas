@@ -8,23 +8,6 @@ from airflow import
 
 REDSHIFT_CONN_STRING = f"postgresql://{user}:{password}@{host}:{port}/{database}"
 
-def extract_data(output_parquet: str):
-    #Pongo la data sobre la API
-    url = "https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables"
-    response = requests.get(url, verify=False)
-    data = response.json()
-
-    #Lo convierto en data frame
-    df = pd.DataFrame(data)
-
-    path = os.path.join(output_parquet, 'data.parquet')
-    #Guardo el archivo parquet
-    df.to_parquet(path)
-    if df.empty:
-        raise AirflowSkipException
-    print(f"Data extraída y guardada en {path}")
-    return path
-
 def transform_data(input_parquet: str, output_parquet: str):
     #Cargo la data cruda del archivo parquet
     df= pd.read_parquet(input_parquet)
