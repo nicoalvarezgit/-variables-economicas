@@ -3,8 +3,8 @@ from datetime import datetime
 
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-import requests
 import pandas as pd
+from scripts import extract_data, transform_data
 
 # Se cargan las variables del archivo .env
 load_dotenv()
@@ -17,12 +17,15 @@ port = os.getenv('REDSHIFT_PORT')
 database = os.getenv('REDSHIFT_DB') 
 
 
+current_dir= os.path.dirname(os.path.realpath(__file__))
+# Va una carpeta hacia atrás usando os.path.join y '..'
+parent_dir = os.path.join(current_dir, os.pardir)
+
+#Defino las constantes.
 REDSHIFT_CONN_STRING = f"postgresql://{user}:{password}@{host}:{port}/{database}"
-DATA_PATH=os.path.dirname(os.path.realpath(__file__))
+DATA_PATH=os.path.abspath(parent_dir)
 REDSHIFT_TABLE = "redshift_table"
 
-
-REDSHIFT_CONN_STRING = f"postgresql://{user}:{password}@{host}:{port}/{database}"
 
 def load_to_redshift(transformed_parquet: str, redshift_table: str, redshift_conn_string: str):
     #Cargo la data transformada del archivo parquet
