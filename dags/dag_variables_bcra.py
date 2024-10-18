@@ -18,20 +18,19 @@ host = os.getenv('REDSHIFT_HOST')
 port = os.getenv('REDSHIFT_PORT')
 database = os.getenv('REDSHIFT_DB') 
 
-
 REDSHIFT_CONN_STRING = f"postgresql://{user}:{password}@{host}:{port}/{database}"
-DATA_PATH=os.path.dirname(os.path.realpath(__file__))
+DATA_PATH=os.path.dirname(os.path.realpath(__file__)) # el path que aparece es este 'C:\\Users\\Nicolas\\OneDrive - BCRA\\Cursos\\Python Data Application (ITBA)\\variables-economicas\\dags'
 REDSHIFT_TABLE = "redshift_table"
 
 with DAG(
-    'etl_redshift_dag',
+    'etl_redshift_dag_variables_bcra',
     default_args={
         'depends_on_past':False, 
         'email_on_failure': False,
         'email_on_retry': False,
         'retries': 1,
     },
-    description='ETL pipeline para extraer, transformar y cargar data a Redshift',
+    description='pipeline ETL para cargar principales variables BCRA a Redshift',
     schedule_interval='5 6 * * 2-6',
     start_date= datetime(2024, 10, 1),
     catchup=True
