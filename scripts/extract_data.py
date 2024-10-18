@@ -1,8 +1,6 @@
 import os
 import requests
-import psycopg2
 import pandas as pd
-import pyarrow
 from airflow.exceptions import AirflowSkipException
 
 def extract_data(output_parquet: str):
@@ -31,11 +29,12 @@ def extract_data(output_parquet: str):
     if df.empty:
         raise AirflowSkipException
    
-   #Realizo una impresión para ver el path y cierro la función de extracción pidiendole que me devuelva el path
+   #Realizo una impresión para ver el- path y cierro la función de extracción pidiendole que me devuelva el path
     print(f"Data extraída y guardada en {path}")
    
     return path
 
-#Ejecutable
-extract_data('.')
+#Si se llama extract_data como módulo, se corre la función
+if __name__ == "__main__":
+    extract_data('.')
 

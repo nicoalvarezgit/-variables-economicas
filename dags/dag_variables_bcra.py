@@ -32,7 +32,7 @@ with DAG(
         'retries': 1,
     },
     description='ETL pipeline para extraer, transformar y cargar data a Redshift',
-    schedule_interval='5 6 * * 1-5',
+    schedule_interval='5 6 * * 2-6',
     start_date= datetime(2024, 10, 1),
     catchup=True
 ) as dag:
