@@ -1,4 +1,3 @@
-#archivo para extraer data
 import os
 import requests
 import psycopg2
@@ -36,4 +35,7 @@ def extract_data(output_parquet: str):
     print(f"Data extraída y guardada en {path}")
    
     return path
+
+#Ejecutable
+#extract_data('.')
 
