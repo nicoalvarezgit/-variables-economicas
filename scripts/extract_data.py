@@ -18,8 +18,8 @@ def extract_data(output_parquet: str):
     #Guardo la respuesta en JSON en la variabla data
     data = response.json()
 
-    #Lo convierto en data frame
-    df = pd.DataFrame(data)
+    #Convierto en data frame al objeto 'results' descartando el 'status_code' que no es importante para el análisis 
+    df = pd.DataFrame(data['results'])
 
     #Armo la ruta llamando al directorio
     path = os.path.join(output_parquet, 'data.parquet')
@@ -37,5 +37,5 @@ def extract_data(output_parquet: str):
     return path
 
 #Ejecutable
-#extract_data('.')
+extract_data('.')
 
