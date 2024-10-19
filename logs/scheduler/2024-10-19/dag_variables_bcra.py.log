@@ -1,0 +1,84 @@
+[2024-10-19T13:02:32.834-0300] {processor.py:186} INFO - Started process (PID=8767) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:02:32.837-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T13:02:32.845-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:02:32.844-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:02:32.935-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:02:32.920-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 5, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+[2024-10-19T13:02:32.941-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:02:33.038-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.217 seconds
+[2024-10-19T13:04:43.234-0300] {processor.py:186} INFO - Started process (PID=8856) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:04:43.236-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T13:04:43.242-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:04:43.241-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:04:43.291-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:04:43.278-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 5, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+[2024-10-19T13:04:43.295-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:04:43.377-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.155 seconds
+[2024-10-19T13:06:47.555-0300] {processor.py:186} INFO - Started process (PID=8935) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:06:47.558-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T13:06:47.564-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:06:47.563-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:06:47.616-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:06:47.606-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 5, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+[2024-10-19T13:06:47.620-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:06:47.710-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.169 seconds
+[2024-10-19T13:08:57.917-0300] {processor.py:186} INFO - Started process (PID=9017) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:08:57.920-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T13:08:57.939-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:08:57.936-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:08:57.998-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:08:57.987-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 5, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+[2024-10-19T13:08:58.004-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:08:58.086-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.189 seconds
+[2024-10-19T13:11:23.010-0300] {processor.py:186} INFO - Started process (PID=9101) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:11:23.014-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T13:11:23.023-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:11:23.022-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:11:23.078-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:11:23.068-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 5, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+[2024-10-19T13:11:23.083-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:11:23.201-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.223 seconds
+[2024-10-19T13:13:59.205-0300] {processor.py:186} INFO - Started process (PID=9191) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:13:59.210-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T13:13:59.218-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:13:59.217-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:13:59.278-0300] {logging_mixin.py:190} INFO - [2024-10-19T13:13:59.265-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 5, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+[2024-10-19T13:13:59.283-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T13:13:59.400-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.210 seconds
