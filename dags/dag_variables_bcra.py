@@ -1,8 +1,12 @@
+import sys
+sys.path.append('/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/scripts')
+
 import os
 import datetime
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from dotenv import load_dotenv
+
 from scripts import extract_data, transform_data, load_to_redshift
 
 # Se cargan las variables del archivo .env
