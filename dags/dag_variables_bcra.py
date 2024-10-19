@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/scripts')
+sys.path.append ('/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/scripts')
 
 import os
 import datetime
