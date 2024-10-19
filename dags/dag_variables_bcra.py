@@ -1,10 +1,7 @@
 import os
 import datetime
-
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.exceptions import AirflowSkipException
-from sqlalchemy import create_engine
 from dotenv import load_dotenv
 from scripts import extract_data, transform_data, load_to_redshift
 
@@ -28,10 +25,11 @@ with DAG(
         'depends_on_past':False, 
         'email_on_failure': False,
         'email_on_retry': False,
+        'retry_delay': datetime.timedelta(minutes=2),
         'retries': 1,
     },
     description='pipeline ETL para cargar principales variables BCRA a Redshift',
-    schedule_interval='5 6 * * 2-6',
+    schedule_interval='1 0 * * 2-6',
     start_date= datetime(2024, 10, 1),
     catchup=True
 ) as dag:
