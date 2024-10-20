@@ -1,6 +1,8 @@
 import os
 from dotenv import load_dotenv
-from sqlalchemy import create_engine
+import redshift_connector
+import awswrangler as wr
+#from sqlalchemy import create_engine
 #import psycopg2
 #from psycopg2 import sql
 import pandas as pd
@@ -17,41 +19,56 @@ port = os.getenv('REDSHIFT_PORT')
 database = os.getenv('REDSHIFT_DB') 
 
 #Defino las constantes.
-REDSHIFT_CONN_STRING = f"postgresql://{user}:{password}@{host}:{port}/{database}"
+#REDSHIFT_CONN_STRING = f"postgresql://{user}:{password}@{host}:{port}/{database}"
 DATA_PATH=os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, 'transformed_data.csv'))
 REDSHIFT_TABLE = "redshift_table"
-REDSHIFT_SCHEMA = "2024_nicolas_alvarez_julia"
+REDSHIFT_SCHEMA = "2024_nicolas_alvarez_julia_schema"
+
+# Parámetros de conexión
+conn_params = {
+    'host': os.getenv('REDSHIFT_HOST'),
+    'database': os.getenv('REDSHIFT_DB'),
+    'user': os.getenv('REDSHIFT_USER'),  
+    'password': os.getenv('REDSHIFT_PASSWORD'),
+    'port': os.getenv('REDSHIFT_PORT'),
+}
 
 
-def load_to_redshift(transformed_csv: str, redshift_table: str, redshift_conn_string: str):
+def load_to_redshift(transformed_csv: str, redshift_table: str, conn_params: dict): #redshift_conn_string: str
     #Cargo la data transformada del archivo parquet
-    df= pd.read_csv(transformed_csv, index_col=0)
-
-    #Se crea el engine de sqlalchemy para redshift
-    engine= create_engine(redshift_conn_string)
+    df= pd.read_csv(transformed_csv)
 
     try:
-         #Cargo la data al Redshift table
-        df.to_sql(redshift_table, con=engine, schema= {REDSHIFT_SCHEMA}, if_exists='append', index=False, method='multi')
-        print(f"Datos cargados exitosamente en la tabla {redshift_table} en Redshift.")
-        
-        with engine.connect() as connection:
-            result = connection.execute("SELECT current_date")
-            for row in result:
-                print(f"El día actual en Redshift es: {row[0]}")
+        # Se establece la conexión
+        conn = redshift_connector.connect(**conn_params)
 
+        #Cargo la data al Redshift table
+        wr.redshift.to_sql(
+            df=df,
+            con=conn,
+            table=redshift_table, 
+            schema=REDSHIFT_SCHEMA, 
+            mode="append",
+            use_column_names=True, 
+            index=False, 
+            lock=True
+        )
+
+        print(f"Datos cargados exitosamente en la tabla {REDSHIFT_SCHEMA}.{redshift_table} en Redshift.")
+        
     except Exception as e:
         print(f"Error en la conexión o carga de datos a Redshift: {e}")
     
     finally:
-        engine.dispose()
+        if conn is not None:
+            conn.close()
     
  
-def main(data_path: str, redshift_table: str, redshift_conn_string: str):
+def main(data_path: str, redshift_table: str, conn_params: dict): #redshift_conn_string: str
     output_path = extract_data(data_path)
     transformed_csv = transform_data(output_path, data_path)
-    load_to_redshift(transformed_csv, redshift_table, redshift_conn_string)
+    load_to_redshift(transformed_csv, redshift_table, conn_params)
 
 #Si se llama load_to_redshift como módulo, se corre la función
 if __name__ == "__main__":
-    load_to_redshift(DATA_PATH, REDSHIFT_TABLE, REDSHIFT_CONN_STRING)
+    load_to_redshift(DATA_PATH, REDSHIFT_TABLE, conn_params)
