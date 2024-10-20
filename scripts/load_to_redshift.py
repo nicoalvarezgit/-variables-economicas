@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-from sqlalchemy import text
+import psycopg2
+from psycopg2 import sql
 import pandas as pd
 from scripts import extract_data, transform_data
 
@@ -26,29 +27,31 @@ DATA_PATH=os.path.abspath(parent_dir)
 REDSHIFT_TABLE = "redshift_table"
 
 
-def load_to_redshift(transformed_parquet: str, redshift_table: str, redshift_conn_string: str):
+def load_to_redshift(transformed_csv: str, redshift_table: str, redshift_conn_string: str):
     #Cargo la data transformada del archivo parquet
-    df= pd.read_parquet(transformed_parquet)
+    df= pd.read_csv(transformed_csv, index_col=0)
 
     #Se crea el engine de sqlalchemy para redshift
     engine= create_engine(redshift_conn_string)
 
-    #Cargo la data al Redshift table
-    df.to_sql(redshift_table, engine, if_exists='replace', index=True, method='multi')
+    try:
+         #Cargo la data al Redshift table
+        df.to_sql(redshift_table, engine, if_exists='append', index=True, method='multi')
 
-    try:    
         with engine.begin() as connection:
             print("Conexión exitosa a Redshift")
-            #Testeo con una query la conexión
+            # Probar la conexión con una consulta
             result = connection.execute("SELECT current_date")
             for row in result:
-                print("El día actual en Redshift es": row[0])
+                print(f"El día actual en Redshift es: {row[0]}")
+
     except Exception as e:
-        print(f"Error en la conexión a Redshift: {e}")
-     
+        print(f"Error en la conexión o carga de datos a Redshift: {e}")
     
-    #print(f"Data cargada en Redshift table {redshift_table}")
+    finally:
+        engine.dispose()
     
+ 
 def main(data_path: str, redshift_table: str, redshift_conn_string: str):
     output_path = extract_data(data_path)
     transformed_data_path = transform_data (output_path, data_path)

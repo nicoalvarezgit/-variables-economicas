@@ -82,3 +82,240 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'dotenv'
 [2024-10-19T13:13:59.283-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
 [2024-10-19T13:13:59.400-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.210 seconds
+[2024-10-19T17:55:50.958-0300] {processor.py:186} INFO - Started process (PID=10864) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T17:55:50.964-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T17:55:50.976-0300] {logging_mixin.py:190} INFO - [2024-10-19T17:55:50.975-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T17:55:51.172-0300] {logging_mixin.py:190} INFO - [2024-10-19T17:55:51.155-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+ModuleNotFoundError: No module named 'scripts'
+[2024-10-19T17:55:51.177-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T17:55:51.386-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.461 seconds
+[2024-10-19T17:58:32.718-0300] {processor.py:186} INFO - Started process (PID=11558) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T17:58:32.721-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T17:58:32.732-0300] {logging_mixin.py:190} INFO - [2024-10-19T17:58:32.731-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T17:58:32.823-0300] {logging_mixin.py:190} INFO - [2024-10-19T17:58:32.810-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+ModuleNotFoundError: No module named 'scripts'
+[2024-10-19T17:58:32.827-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T17:58:32.970-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.283 seconds
+[2024-10-19T18:00:02.202-0300] {processor.py:186} INFO - Started process (PID=11947) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:00:02.267-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:00:02.316-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:00:02.314-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:00:02.531-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:00:02.512-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+ModuleNotFoundError: No module named 'scripts'
+[2024-10-19T18:00:02.537-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:00:02.928-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.777 seconds
+[2024-10-19T18:01:26.168-0300] {processor.py:186} INFO - Started process (PID=12311) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:01:26.170-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:01:26.177-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:01:26.175-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:01:26.247-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:01:26.236-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+ModuleNotFoundError: No module named 'scripts'
+[2024-10-19T18:01:26.252-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:01:26.341-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.186 seconds
+[2024-10-19T18:02:57.650-0300] {processor.py:186} INFO - Started process (PID=12705) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:02:57.665-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:02:57.683-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:02:57.680-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:02:57.831-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:02:57.819-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+ModuleNotFoundError: No module named 'scripts'
+[2024-10-19T18:02:57.835-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:02:58.129-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.522 seconds
+[2024-10-19T18:04:37.603-0300] {processor.py:186} INFO - Started process (PID=13133) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:04:37.605-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:04:37.612-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:04:37.611-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:04:37.669-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:04:37.661-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+ModuleNotFoundError: No module named 'scripts'
+[2024-10-19T18:04:37.673-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:04:37.749-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.158 seconds
+[2024-10-19T18:06:07.030-0300] {processor.py:186} INFO - Started process (PID=13520) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:06:07.033-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:06:07.041-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:06:07.039-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:06:07.339-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:06:07.329-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/load_to_redshift.py", line 45
+    print("El día actual en Redshift es": row[0])
+                                         ^
+SyntaxError: invalid syntax
+[2024-10-19T18:06:07.344-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:06:07.434-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.419 seconds
+[2024-10-19T18:07:23.995-0300] {processor.py:186} INFO - Started process (PID=13856) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:07:23.999-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:07:24.007-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:07:24.004-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:07:24.825-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:07:24.811-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/load_to_redshift.py", line 45
+    print("El día actual en Redshift es": row[0])
+                                         ^
+SyntaxError: invalid syntax
+[2024-10-19T18:07:24.832-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:07:24.988-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 1.016 seconds
+[2024-10-19T18:09:35.739-0300] {processor.py:186} INFO - Started process (PID=14454) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:09:35.743-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:09:35.755-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:09:35.754-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:09:35.972-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:09:35.955-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/load_to_redshift.py", line 45
+    print("El día actual en Redshift es": row[0])
+                                         ^
+SyntaxError: invalid syntax
+[2024-10-19T18:09:35.978-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:09:36.081-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.365 seconds
+[2024-10-19T18:11:38.813-0300] {processor.py:186} INFO - Started process (PID=14996) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:11:38.816-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:11:38.824-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:11:38.823-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:11:39.016-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:11:39.006-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/load_to_redshift.py", line 45
+    print("El día actual en Redshift es": row[0])
+                                         ^
+SyntaxError: invalid syntax
+[2024-10-19T18:11:39.022-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:11:39.110-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.316 seconds
+[2024-10-19T18:29:13.642-0300] {processor.py:186} INFO - Started process (PID=19139) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:29:13.645-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:29:13.660-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:29:13.657-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:29:13.948-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:29:13.930-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/load_to_redshift.py", line 45
+    print("El día actual en Redshift es": row[0])
+                                         ^
+SyntaxError: invalid syntax
+[2024-10-19T18:29:13.956-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:29:14.136-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.520 seconds
+[2024-10-19T18:31:22.006-0300] {processor.py:186} INFO - Started process (PID=19705) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:31:22.009-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:31:22.014-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:31:22.013-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:31:22.158-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:31:22.145-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/load_to_redshift.py", line 45
+    print("El día actual en Redshift es": row[0])
+                                         ^
+SyntaxError: invalid syntax
+[2024-10-19T18:31:22.162-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:31:22.255-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.263 seconds
+[2024-10-19T18:32:57.479-0300] {processor.py:186} INFO - Started process (PID=20117) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:32:57.482-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:32:57.487-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:32:57.486-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:32:57.662-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:32:57.651-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/load_to_redshift.py", line 45
+    print("El día actual en Redshift es": row[0])
+                                         ^
+SyntaxError: invalid syntax
+[2024-10-19T18:32:57.666-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:32:57.769-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.308 seconds
+[2024-10-19T18:34:48.556-0300] {processor.py:186} INFO - Started process (PID=20595) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:34:48.559-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:34:48.563-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:34:48.563-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:34:48.765-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:34:48.747-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/load_to_redshift.py", line 45
+    print("El día actual en Redshift es": row[0])
+                                         ^
+SyntaxError: invalid syntax
+[2024-10-19T18:34:48.772-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:34:48.872-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.328 seconds
+[2024-10-19T18:36:33.915-0300] {processor.py:186} INFO - Started process (PID=21052) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:36:33.919-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-19T18:36:33.935-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:36:33.934-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:36:34.211-0300] {logging_mixin.py:190} INFO - [2024-10-19T18:36:34.197-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/load_to_redshift.py", line 45
+    print("El día actual en Redshift es": row[0])
+                                         ^
+SyntaxError: invalid syntax
+[2024-10-19T18:36:34.217-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-19T18:36:34.415-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 0.542 seconds

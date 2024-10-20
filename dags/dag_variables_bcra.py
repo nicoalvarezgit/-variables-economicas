@@ -1,7 +1,7 @@
 import sys
-sys.path.append ('/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/scripts')
-
 import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 import datetime
 from airflow import DAG
 from airflow.operators.python import PythonOperator

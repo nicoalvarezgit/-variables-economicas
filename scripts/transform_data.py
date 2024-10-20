@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 
 
-def transform_data(input_parquet: str, output_parquet: str):
+def transform_data(input_parquet: str, output_csv: str):
     
     #Cargo la data cruda del archivo parquet
     df= pd.read_parquet(input_parquet)
@@ -22,10 +22,10 @@ def transform_data(input_parquet: str, output_parquet: str):
     df = df[~df['id'].isin(variables_a_eliminar)]
 
     #Se crea el path nuevamente para guardar el dataframe transformado
-    path = os.path.join(output_parquet, 'transformed_data.parquet')
+    path = os.path.join(output_csv, 'transformed_data.csv')
     
     #Se guarda el archivo transormado en formato parquet
-    df.to_parquet(path, index=True)
+    df.to_csv(path, index=False)
 
     print(f"Data transformada y guardada en {path}")
     return path
