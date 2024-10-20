@@ -23,12 +23,12 @@ def transform_data(input_parquet: str, output_csv: str):
 
     # Encontrar la fecha más reciente en la columna 'fecha' y se pasa a la una nueva columna 'fecha dato' con la misma fecha en todas las filas
     fecha_mas_reciente = df['fecha'].max()
-    df['fecha dato'] = fecha_mas_reciente
+    df['fecha_dato'] = fecha_mas_reciente
 
     #Se crea el path nuevamente para guardar el dataframe transformado
     path = os.path.join(output_csv, 'transformed_data.csv')
     
-    #Se guarda el archivo transormado en formato parquet
+    #Se guarda el archivo transormado en formato csv
     df.to_csv(path, index=False)
 
     print(f"Data transformada y guardada en {path}")
