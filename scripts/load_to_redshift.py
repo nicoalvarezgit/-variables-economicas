@@ -20,6 +20,8 @@ database = os.getenv('REDSHIFT_DB')
 REDSHIFT_CONN_STRING = f"postgresql://{user}:{password}@{host}:{port}/{database}"
 DATA_PATH=os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, 'transformed_data.csv'))
 REDSHIFT_TABLE = "redshift_table"
+REDSHIFT_SCHEMA = "2024_nicolas_alvarez_julia"
+
 
 def load_to_redshift(transformed_csv: str, redshift_table: str, redshift_conn_string: str):
     #Cargo la data transformada del archivo parquet
@@ -30,7 +32,7 @@ def load_to_redshift(transformed_csv: str, redshift_table: str, redshift_conn_st
 
     try:
          #Cargo la data al Redshift table
-        df.to_sql(redshift_table, engine, if_exists='append', index=False, method='multi')
+        df.to_sql(redshift_table, con=engine, schema= {REDSHIFT_SCHEMA}, if_exists='append', index=False, method='multi')
         print(f"Datos cargados exitosamente en la tabla {redshift_table} en Redshift.")
         
         with engine.connect() as connection:
