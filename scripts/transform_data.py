@@ -1,6 +1,10 @@
 import os
 import pandas as pd
 
+DATA_PATH=os.path.join(os.path.dirname(__file__),os.pardir)
+#
+#os.path.abspath(
+#
 
 def transform_data(input_parquet: str, output_csv: str):
     
@@ -26,15 +30,17 @@ def transform_data(input_parquet: str, output_csv: str):
     df['fecha_dato'] = fecha_mas_reciente
 
     #Se crea el path nuevamente para guardar el dataframe transformado
-    path = os.path.join(output_csv, 'transformed_data.csv')
+    #path = os.path.join(output_csv, 'transformed_data.csv')
     
     #Se guarda el archivo transormado en formato csv
-    df.to_csv(path, index=False)
+    df.to_csv(output_csv, index=False)
 
-    print(f"Data transformada y guardada en {path}")
-    return path
+    print(f"Data transformada y guardada en {output_csv}")
+    return output_csv
 
 #Si se llama transform_data como módulo, se corre la función
 if __name__ == "__main__":
-    transform_data('data.parquet', '.')
+    input_parquet= os.path.join(DATA_PATH,'data.parquet')
+    output_csv=os.path.join(DATA_PATH,'transformed_data.csv')
+    transform_data(input_parquet, output_csv)
 

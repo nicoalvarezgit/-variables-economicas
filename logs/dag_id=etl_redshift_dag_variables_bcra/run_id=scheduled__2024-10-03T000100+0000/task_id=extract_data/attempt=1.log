@@ -1,0 +1,28 @@
+[2024-10-20T03:08:21.117-0300] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-20T03:08:21.232-0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_redshift_dag_variables_bcra.extract_data scheduled__2024-10-03T00:01:00+00:00 [queued]>
+[2024-10-20T03:08:21.288-0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_redshift_dag_variables_bcra.extract_data scheduled__2024-10-03T00:01:00+00:00 [queued]>
+[2024-10-20T03:08:21.300-0300] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-20T03:08:21.944-0300] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): extract_data> on 2024-10-03 00:01:00+00:00
+[2024-10-20T03:08:21.967-0300] {standard_task_runner.py:72} INFO - Started process 95756 to run task
+[2024-10-20T03:08:21.979-0300] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'etl_redshift_dag_variables_bcra', 'extract_data', 'scheduled__2024-10-03T00:01:00+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/dag_variables_bcra.py', '--cfg-path', '/tmp/tmp1wb3wnc1']
+[2024-10-20T03:08:21.992-0300] {standard_task_runner.py:105} INFO - Job 26: Subtask extract_data
+[2024-10-20T03:08:23.953-0300] {task_command.py:467} INFO - Running <TaskInstance: etl_redshift_dag_variables_bcra.extract_data scheduled__2024-10-03T00:01:00+00:00 [running]> on host DESKTOP-MVFODGC.
+[2024-10-20T03:08:24.913-0300] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_redshift_dag_variables_bcra' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-10-03T00:01:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-03T00:01:00+00:00'
+[2024-10-20T03:08:24.918-0300] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-20T03:08:24.923-0300] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-20T03:08:24.930-0300] {logging_mixin.py:190} INFO - Current task name:extract_data state:running start_date:2024-10-20 06:08:21.239871+00:00
+[2024-10-20T03:08:24.933-0300] {logging_mixin.py:190} INFO - Dag name:etl_redshift_dag_variables_bcra and current dag run status:running
+[2024-10-20T03:08:24.936-0300] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-20T03:08:25.184-0300] {logging_mixin.py:190} WARNING - /home/nico/.local/lib/python3.10/site-packages/urllib3/connectionpool.py:1099 InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.bcra.gob.ar'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+[2024-10-20T03:08:25.465-0300] {logging_mixin.py:190} INFO - Data extraída y guardada en /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/data.parquet
+[2024-10-20T03:08:25.474-0300] {python.py:240} INFO - Done. Returned value was: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/data.parquet
+[2024-10-20T03:08:25.614-0300] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-20T03:08:25.621-0300] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_redshift_dag_variables_bcra, task_id=extract_data, run_id=scheduled__2024-10-03T00:01:00+00:00, execution_date=20241003T000100, start_date=20241020T060821, end_date=20241020T060825
+[2024-10-20T03:08:26.262-0300] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-20T03:08:26.265-0300] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-20T03:08:26.291-0300] {logging_mixin.py:190} INFO - Dag name:etl_redshift_dag_variables_bcra queued_at:2024-10-20 06:07:59.555793+00:00
+[2024-10-20T03:08:26.323-0300] {logging_mixin.py:190} INFO - Task hostname:DESKTOP-MVFODGC. operator:PythonOperator
+[2024-10-20T03:08:26.447-0300] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-20T03:08:27.004-0300] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2024-10-20T03:08:27.110-0300] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-20T03:08:27.218-0300] {local_task_job_runner.py:245} INFO - ::endgroup::

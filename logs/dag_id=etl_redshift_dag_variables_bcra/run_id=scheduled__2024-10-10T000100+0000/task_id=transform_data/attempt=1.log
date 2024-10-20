@@ -1,0 +1,80 @@
+[2024-10-20T03:15:44.123-0300] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-20T03:15:44.175-0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_redshift_dag_variables_bcra.transform_data scheduled__2024-10-10T00:01:00+00:00 [queued]>
+[2024-10-20T03:15:44.213-0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_redshift_dag_variables_bcra.transform_data scheduled__2024-10-10T00:01:00+00:00 [queued]>
+[2024-10-20T03:15:44.215-0300] {taskinstance.py:2865} INFO - Starting attempt 1 of 2
+[2024-10-20T03:15:44.298-0300] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): transform_data> on 2024-10-10 00:01:00+00:00
+[2024-10-20T03:15:44.318-0300] {standard_task_runner.py:72} INFO - Started process 97643 to run task
+[2024-10-20T03:15:44.328-0300] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'etl_redshift_dag_variables_bcra', 'transform_data', 'scheduled__2024-10-10T00:01:00+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/dag_variables_bcra.py', '--cfg-path', '/tmp/tmpiqlsafd1']
+[2024-10-20T03:15:44.335-0300] {standard_task_runner.py:105} INFO - Job 47: Subtask transform_data
+[2024-10-20T03:15:44.535-0300] {task_command.py:467} INFO - Running <TaskInstance: etl_redshift_dag_variables_bcra.transform_data scheduled__2024-10-10T00:01:00+00:00 [running]> on host DESKTOP-MVFODGC.
+[2024-10-20T03:15:44.820-0300] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_redshift_dag_variables_bcra' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2024-10-10T00:01:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-10T00:01:00+00:00'
+[2024-10-20T03:15:44.825-0300] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-20T03:15:44.827-0300] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-20T03:15:44.830-0300] {logging_mixin.py:190} INFO - Current task name:transform_data state:running start_date:2024-10-20 06:15:44.177659+00:00
+[2024-10-20T03:15:44.834-0300] {logging_mixin.py:190} INFO - Dag name:etl_redshift_dag_variables_bcra and current dag run status:running
+[2024-10-20T03:15:44.838-0300] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-20T03:15:44.845-0300] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+TypeError: transform_data() missing 2 required positional arguments: 'input_parquet' and 'output_csv'
+[2024-10-20T03:15:44.883-0300] {logging_mixin.py:190} INFO - Task instance in failure state
+[2024-10-20T03:15:44.885-0300] {logging_mixin.py:190} INFO - Task start:2024-10-20 06:15:44.177659+00:00 end:2024-10-20 06:15:44.882301+00:00 duration:0.704642
+[2024-10-20T03:15:44.888-0300] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): transform_data> dag:<DAG: etl_redshift_dag_variables_bcra> dagrun:<DagRun etl_redshift_dag_variables_bcra @ 2024-10-10 00:01:00+00:00: scheduled__2024-10-10T00:01:00+00:00, state:running, queued_at: 2024-10-20 06:13:56.208141+00:00. externally triggered: False>
+[2024-10-20T03:15:44.891-0300] {logging_mixin.py:190} INFO - Failure caused by transform_data() missing 2 required positional arguments: 'input_parquet' and 'output_csv'
+[2024-10-20T03:15:44.894-0300] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_redshift_dag_variables_bcra, task_id=transform_data, run_id=scheduled__2024-10-10T00:01:00+00:00, execution_date=20241010T000100, start_date=20241020T061544, end_date=20241020T061544
+[2024-10-20T03:15:44.989-0300] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-20T03:15:44.991-0300] {standard_task_runner.py:124} ERROR - Failed to execute job 47 for task transform_data (transform_data() missing 2 required positional arguments: 'input_parquet' and 'output_csv'; 97643)
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+TypeError: transform_data() missing 2 required positional arguments: 'input_parquet' and 'output_csv'
+[2024-10-20T03:15:45.031-0300] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-10-20T03:15:45.282-0300] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-20T03:15:45.352-0300] {local_task_job_runner.py:245} INFO - ::endgroup::
