@@ -1,8 +1,8 @@
 import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-import psycopg2
-from psycopg2 import sql
+#import psycopg2
+#from psycopg2 import sql
 import pandas as pd
 from scripts import extract_data, transform_data
 
@@ -16,16 +16,10 @@ host = os.getenv('REDSHIFT_HOST')
 port = os.getenv('REDSHIFT_PORT')
 database = os.getenv('REDSHIFT_DB') 
 
-#Llamo al directorio actual
-current_dir= os.path.dirname(os.path.realpath(__file__))
-# Voy hacia la carpeta anterior
-parent_dir = os.path.join(current_dir, os.pardir)
-
 #Defino las constantes.
 REDSHIFT_CONN_STRING = f"postgresql://{user}:{password}@{host}:{port}/{database}"
-DATA_PATH=os.path.abspath(parent_dir)
+DATA_PATH=os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir, 'transformed_data.csv'))
 REDSHIFT_TABLE = "redshift_table"
-
 
 def load_to_redshift(transformed_csv: str, redshift_table: str, redshift_conn_string: str):
     #Cargo la data transformada del archivo parquet
@@ -36,11 +30,10 @@ def load_to_redshift(transformed_csv: str, redshift_table: str, redshift_conn_st
 
     try:
          #Cargo la data al Redshift table
-        df.to_sql(redshift_table, engine, if_exists='append', index=True, method='multi')
-
-        with engine.begin() as connection:
-            print("Conexión exitosa a Redshift")
-            # Probar la conexión con una consulta
+        df.to_sql(redshift_table, engine, if_exists='append', index=False, method='multi')
+        print(f"Datos cargados exitosamente en la tabla {redshift_table} en Redshift.")
+        
+        with engine.connect() as connection:
             result = connection.execute("SELECT current_date")
             for row in result:
                 print(f"El día actual en Redshift es: {row[0]}")
@@ -54,8 +47,8 @@ def load_to_redshift(transformed_csv: str, redshift_table: str, redshift_conn_st
  
 def main(data_path: str, redshift_table: str, redshift_conn_string: str):
     output_path = extract_data(data_path)
-    transformed_data_path = transform_data (output_path, data_path)
-    load_to_redshift(transformed_data_path, redshift_table, redshift_conn_string)
+    transformed_csv = transform_data(output_path, data_path)
+    load_to_redshift(transformed_csv, redshift_table, redshift_conn_string)
 
 #Si se llama load_to_redshift como módulo, se corre la función
 if __name__ == "__main__":

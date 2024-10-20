@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-from datetime import datetime, timedelta
 
 
 def transform_data(input_parquet: str, output_csv: str):
@@ -18,8 +17,13 @@ def transform_data(input_parquet: str, output_csv: str):
     
     df = df.rename(columns={'idVariable': 'id', 'descripcion': 'variable'})  # Renombrar la columna de valor
 
-    variables_a_eliminar = [4, 30, 31, 32, 40, 43] #se forma una tupla con los valores de los ids de variables que no interesan al análisis. 
+    #se forma una tupla con los valores de los ids de variables que no interesan al análisis.
+    variables_a_eliminar = [4, 30, 31, 32, 40, 43]  
     df = df[~df['id'].isin(variables_a_eliminar)]
+
+    # Encontrar la fecha más reciente en la columna 'fecha' y se pasa a la una nueva columna 'fecha dato' con la misma fecha en todas las filas
+    fecha_mas_reciente = df['fecha'].max()
+    df['fecha dato'] = fecha_mas_reciente
 
     #Se crea el path nuevamente para guardar el dataframe transformado
     path = os.path.join(output_csv, 'transformed_data.csv')
