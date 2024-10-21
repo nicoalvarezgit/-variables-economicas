@@ -2,9 +2,6 @@ import os
 import pandas as pd
 
 DATA_PATH=os.path.join(os.path.dirname(__file__),os.pardir)
-#
-#os.path.abspath(
-#
 
 def transform_data(input_parquet: str, output_csv: str):
     
@@ -17,8 +14,6 @@ def transform_data(input_parquet: str, output_csv: str):
     #Se elimina la columna 'cdSerie' que no aporta ningún valor, mantengo el idVariable
     df.drop('cdSerie', axis=1, inplace=True)
     
-    #df.set_index('fecha', inplace=True)  # Usar la fecha como índice
-    
     df = df.rename(columns={'idVariable': 'id', 'descripcion': 'variable'})  # Renombrar la columna de valor
 
     #se forma una tupla con los valores de los ids de variables que no interesan al análisis.
@@ -29,9 +24,6 @@ def transform_data(input_parquet: str, output_csv: str):
     fecha_mas_reciente = df['fecha'].max()
     df['fecha_dato'] = fecha_mas_reciente
 
-    #Se crea el path nuevamente para guardar el dataframe transformado
-    #path = os.path.join(output_csv, 'transformed_data.csv')
-    
     #Se guarda el archivo transormado en formato csv
     df.to_csv(output_csv, index=False)
 

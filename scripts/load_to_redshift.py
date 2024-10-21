@@ -8,16 +8,6 @@ from scripts import extract_data, transform_data
 # Se cargan las variables del archivo .env
 load_dotenv()
 
-# Obtener las credenciales desde las variables de entorno
-#user = os.getenv('REDSHIFT_USER')
-#password = os.getenv('REDSHIFT_PASSWORD')
-#host = os.getenv('REDSHIFT_HOST')
-#port = os.getenv('REDSHIFT_PORT')
-#database = os.getenv('REDSHIFT_DB') 
-
-#os.path.abspath(
-#Defino las constantes.
-#REDSHIFT_CONN_STRING = f"postgresql://{user}:{password}@{host}:{port}/{database}"
 DATA_PATH=os.path.join(os.path.dirname(__file__), os.pardir, 'transformed_data.csv')
 REDSHIFT_TABLE = "redshift_table"
 REDSHIFT_SCHEMA = "2024_nicolas_alvarez_julia_schema"
@@ -32,7 +22,7 @@ conn_params = {
 }
 
 
-def load_to_redshift(transformed_csv: str, redshift_table: str, conn_params: dict): #redshift_conn_string: str
+def load_to_redshift(transformed_csv: str, redshift_table: str, conn_params: dict): 
     #Cargo la data transformada del archivo parquet
     df= pd.read_csv(transformed_csv)
 
