@@ -1088,3 +1088,10 @@ SyntaxError: expression expected after dictionary key and ':'
 [2024-10-20T18:20:08.848-0300] {logging_mixin.py:190} INFO - [2024-10-20T18:20:08.847-0300] {dag.py:3239} INFO - Sync 1 DAGs
 [2024-10-20T18:20:08.923-0300] {logging_mixin.py:190} INFO - [2024-10-20T18:20:08.922-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_bcra to 2024-10-19 00:01:00+00:00, run_after=2024-10-22 00:01:00+00:00
 [2024-10-20T18:20:09.055-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 1.991 seconds
+[2024-10-20T18:22:27.850-0300] {processor.py:186} INFO - Started process (PID=139114) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-20T18:22:27.852-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py for tasks to queue
+[2024-10-20T18:22:27.864-0300] {logging_mixin.py:190} INFO - [2024-10-20T18:22:27.861-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-20T18:22:28.823-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_bcra' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py
+[2024-10-20T18:22:28.889-0300] {logging_mixin.py:190} INFO - [2024-10-20T18:22:28.888-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-20T18:22:28.958-0300] {logging_mixin.py:190} INFO - [2024-10-20T18:22:28.957-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_bcra to 2024-10-19 00:01:00+00:00, run_after=2024-10-22 00:01:00+00:00
+[2024-10-20T18:22:29.089-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py took 1.253 seconds
