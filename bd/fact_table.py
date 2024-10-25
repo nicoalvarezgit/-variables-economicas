@@ -17,10 +17,13 @@ def create_fact_table():
     # Consulta SQL para crear la tabla en el esquema especificado
     create_table_query = f"""
     CREATE TABLE IF NOT EXISTS {schema}.fact_table (
-        id INT,
+        variable_id VARCHAR (50),
         fecha DATE,
         valor NUMERIC,
-        fecha_dato DATE
+        fecha_dato DATE,
+        PRIMARY KEY (fecha_dato, variable_id),
+        FOREIGN KEY (fecha_dato) REFERENCES {schema}.dim_fecha (fecha_dato),
+        FOREIGN KEY (variable_id) REFERENCES {schema}.dim_variable (variable_id)
     );
     """
 

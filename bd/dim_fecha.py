@@ -23,7 +23,7 @@ def create_dim_fecha_table():
         nombre_mes VARCHAR (20),
         dia INT,
         nombre_dia VARCHAR (20),
-        trimestre INT,
+        trimestre INT
     );
     """
 
