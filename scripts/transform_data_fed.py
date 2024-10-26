@@ -2,7 +2,6 @@ import os
 import pandas as pd
 
 DATA_PATH=os.path.dirname(__file__)
-#os.path.join(,os.pardir)
 
 def transform_data_fed(input_csv: str, output_csv: str):
     
@@ -11,7 +10,7 @@ def transform_data_fed(input_csv: str, output_csv: str):
     
     # Se reorganiza el DataFrame en función de la fecha del dato
     df_pivot = df.pivot_table(
-        index='date',  
+        index=['date','realtime_end'],  
         columns='series_id',  
         values='value',  
         aggfunc='first'  

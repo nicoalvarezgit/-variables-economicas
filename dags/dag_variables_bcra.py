@@ -7,7 +7,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from dotenv import load_dotenv
 
-from scripts import extract_data, transform_data, load_to_redshift
+from scripts import extract_data, transform_data, load_to_redshift, actualizar_dim_fecha
 
 # Se cargan las variables del archivo .env
 load_dotenv()
@@ -66,5 +66,11 @@ with DAG(
         },
     )
 
+    # Tarea 4: Actualizar la tabla de las fechas
+    actualizar_fecha_task = PythonOperator(
+        task_id='actualizar_dim_fecha',
+        python_callable=actualizar_dim_fecha,
+    )
+
     #Seteando el orden de tareas
-    extract_task >> transform_task >> load_task
+    actualizar_fecha_task >> extract_task >> transform_task >> load_task

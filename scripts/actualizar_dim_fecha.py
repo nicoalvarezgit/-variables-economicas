@@ -1,6 +1,5 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-import locale
 import os
 from datetime import datetime, timedelta
 import redshift_connector
@@ -10,8 +9,6 @@ import pandas as pd
 REDSHIFT_TABLE = "dim_fecha"
 REDSHIFT_SCHEMA = "2024_nicolas_alvarez_julia_schema"
 
-#Se estable el español como predeterminado especialmente por los nombres de día y mes.
-locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
 
 conn_params = {
     'host': os.getenv('REDSHIFT_HOST'),
