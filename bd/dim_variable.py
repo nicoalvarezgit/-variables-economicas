@@ -20,6 +20,7 @@ def create_dim_variable_table():
         variable_id VARCHAR (50) PRIMARY KEY,
         nombre_variable VARCHAR (255),
         fuente VARCHAR (50),
+        unidad VARCHAR (50),
         tipo_variable VARCHAR (50),
         frecuencia VARCHAR (50)
     );
