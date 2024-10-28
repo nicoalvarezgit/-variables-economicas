@@ -7,7 +7,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from dotenv import load_dotenv
 
-from scripts import extract_data, transform_data, load_to_redshift, actualizar_dim_fecha
+from scripts import extract_data, transform_data, load_to_redshift, actualizar_dim_fecha, limpieza_duplicados
 
 # Se cargan las variables del archivo .env
 load_dotenv()
@@ -23,6 +23,8 @@ conn_params = {
 
 DATA_PATH=os.path.dirname(os.path.realpath(__file__)) 
 REDSHIFT_TABLE = "fact_table"
+columns = ["variable_id", "fecha", "valor", "fecha_dato"]
+
 
 with DAG(
     'etl_redshift_dag_variables_fed',
@@ -71,5 +73,16 @@ with DAG(
         python_callable=actualizar_dim_fecha,
     )
 
+    # Tarea 5: Limpieza duplicados
+    limpieza_duplicados_task = PythonOperator(
+        task_id='limpieza_duplicados',
+        python_callable=limpieza_duplicados,
+         op_kwargs={
+            'redshift_table': REDSHIFT_TABLE,
+            'conn_params': conn_params,
+            'columns': columns
+        },
+    )
+
     #Seteando el orden de tareas
-    actualizar_fecha_task >> extract_task >> transform_task >> load_task
+    actualizar_fecha_task >> extract_task >> transform_task >> load_task >> limpieza_duplicados_task

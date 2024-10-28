@@ -8,22 +8,22 @@ def transform_data_fed(input_csv: str, output_csv: str):
     #Cargo la data cruda del archivo csv
     df= pd.read_csv(input_csv)
     
-    # Se reorganiza el DataFrame en función de la fecha del dato
-    df_pivot = df.pivot_table(
-        index=['date','realtime_end'],  
-        columns='series_id',  
-        values='value',  
-        aggfunc='first'  
-    )
 
-    df_pivot.reset_index(inplace=True)
-    print(df_pivot)
+    #Se eliminan las columnas 'realtime_start'
+    df.drop(['realtime_start'], axis=1, inplace=True)
+
+    #Se renombran las columnas para coincidir con las tables
+    df = df.rename(columns={'series_id': 'variable_id', 'realtime_end': 'fecha', 'date': 'fecha_dato', 'value': 'valor'})  # Renombro las columnas
+
+    #Se reorganizan las columnas 
+    orden_df=['variable_id','fecha','valor','fecha_dato']
+    df= df[orden_df]
 
     #Hay una variable (DFF) que tiene datos de más de un día, mientras del resto toma un solo día. Se elimina la fila adelantada.
-    df_pivot=df_pivot.dropna(axis=0,thresh=2)
+    #df_pivot=df_pivot.dropna(axis=0,thresh=2)
 
     #Se guarda el archivo transormado en formato csv
-    df_pivot.to_csv(output_csv, index=False)
+    df.to_csv(output_csv, index=False)
 
     print(f"Data transformada y guardada en {output_csv}")
     return output_csv

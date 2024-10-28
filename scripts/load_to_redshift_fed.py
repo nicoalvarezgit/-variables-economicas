@@ -9,7 +9,7 @@ from scripts import extract_data, transform_data
 load_dotenv()
 
 DATA_PATH=os.path.join(os.path.dirname(__file__), 'transformed_data_fed.csv')
-REDSHIFT_TABLE = "redshift_table"
+REDSHIFT_TABLE = "fact_table"
 REDSHIFT_SCHEMA = "2024_nicolas_alvarez_julia_schema"
 
 # Parámetros de conexión
@@ -45,7 +45,7 @@ def load_to_redshift(transformed_csv: str, redshift_table: str, conn_params: dic
         print(f"Datos cargados exitosamente en la tabla {REDSHIFT_SCHEMA}.{redshift_table} en Redshift.")
         
     except Exception as e:
-        print(f"Error en la conexión o carga de datos a Redshift: {e}")
+        raise Exception(f"Error en la conexión o carga de datos a Redshift: {e}")
     
     finally:
         if conn is not None:

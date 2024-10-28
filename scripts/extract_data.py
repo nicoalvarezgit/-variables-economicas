@@ -3,6 +3,8 @@ import requests
 import pandas as pd
 from airflow.exceptions import AirflowSkipException
 
+DATA_PATH=os.path.dirname(__file__)
+
 def extract_data(output_parquet: str):
     
     #Creo objeto url para guardar el https de la API del BCRA y realizo un request.
@@ -36,5 +38,5 @@ def extract_data(output_parquet: str):
 
 #Si se llama extract_data como módulo, se corre la función
 if __name__ == "__main__":
-    extract_data('.')
+    extract_data(DATA_PATH)
 

@@ -4,8 +4,6 @@ import pandas as pd
 from datetime import datetime, timedelta
 
 ##Se publica a las 16_15 (puede ser que esté una o dos horas)
-#Llamo a la api_key para hacer la request
-#api_key=os.getenv('api_key')
 
 #Defino la página base:
 url_base="https://api.stlouisfed.org/fred/series/observations"
@@ -14,14 +12,14 @@ series_ids= [
      "DFF", "T10Y2Y", "DGS1", "DGS2", "DGS3", "DGS5", "DGS7", "DGS10", "DGS20", "DGS30", "DFII5", "DFII10", "DFII30", "DTB4WK", "DTB3", "DTB6", "DPRIME", "DPCREDIT", "DGS1MO", "DGS3MO", "DGS6MO"
 ]
 
+#Llamo a la api_key para hacer la request
+api_key=os.getenv('api_key')
 
-#response1= requests.get(url)
-api_key= "62695440d6da987f056cc9f29571a45d"
+DATA_PATH=os.path.dirname(__file__)
 
-
-def request_fed_data(series_id):
+def request_fed_data(series_id: list):
     hoy = datetime.today().strftime('%Y-%m-%d')
-    anteayer = (datetime.today() - timedelta(days=2)).strftime('%Y-%m-%d')
+    anteayer = (datetime.today() - timedelta(days=4)).strftime('%Y-%m-%d')
     ayer = (datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')
     params = {
         'series_id': series_id,
@@ -34,9 +32,8 @@ def request_fed_data(series_id):
     
     # Verificar si la respuesta fue exitosa
     if response.status_code != 200:
-        print(f"Error extrayendo data para las series {series_id}: {response.status_code}")
-        return None
-    
+        raise Exception(f"Error en la solicitud a la API. Código error: {response.status_code}")
+        
     data = response.json()
     
     # Imprimir las claves (keys) del JSON obtenido
@@ -88,7 +85,8 @@ if __name__ == "__main__":
     # Concatenar todos los DataFrames en uno solo
     if all_dataframes:
         final_df = pd.concat(all_dataframes, ignore_index=True)
-        final_df.to_csv('data_fed.csv')
+             
+        final_df.to_csv(os.path.join(DATA_PATH, 'data_fed.csv'))
         print("Datos exportados a CSV exitosamente")
         print("Final concatenated DataFrame:")
         print(final_df)
