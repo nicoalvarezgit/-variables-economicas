@@ -37,7 +37,7 @@ with DAG(
     },
     description='pipeline ETL para cargar principales variables FED a Redshift',
     schedule_interval='0 19 * * 2-6',
-    start_date= datetime(2024, 10, 17),
+    start_date= datetime(2024, 10, 23),
     catchup=True
 ) as dag:
     
@@ -73,16 +73,5 @@ with DAG(
         python_callable=actualizar_dim_fecha,
     )
 
-    # Tarea 5: Limpieza duplicados
-    limpieza_duplicados_task = PythonOperator(
-        task_id='limpieza_duplicados',
-        python_callable=limpieza_duplicados,
-         op_kwargs={
-            'redshift_table': REDSHIFT_TABLE,
-            'conn_params': conn_params,
-            'columns': columns
-        },
-    )
-
     #Seteando el orden de tareas
-    actualizar_fecha_task >> extract_task >> transform_task >> load_task >> limpieza_duplicados_task
+    actualizar_fecha_task >> extract_task >> transform_task >> load_task

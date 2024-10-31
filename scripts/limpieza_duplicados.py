@@ -26,21 +26,33 @@ def limpieza_duplicados(redshift_table: str, conn_params: dict, columns: list):
         # Conectar a Redshift
         conn = redshift_connector.connect(**conn_params)
 
-        # Ejecutar el comando DELETE para eliminar duplicados en todas las columnas
-        delete_query = f"""
-        DELETE FROM {REDSHIFT_SCHEMA}.{redshift_table}
-        USING (
-            SELECT {", ".join(columns)}, MIN(ctid) as min_ctid
-            FROM {REDSHIFT_SCHEMA}.{redshift_table}
-            GROUP BY {", ".join(columns)}
-            HAVING COUNT(*) > 1
-        ) AS duplicates
-        WHERE {REDSHIFT_SCHEMA}.{redshift_table}.ctid != duplicates.min_ctid
-        AND {" AND ".join([f"{REDSHIFT_SCHEMA}.{redshift_table}.{col} = duplicates.{col}" for col in columns])};
+        # Paso 1: Crear la tabla temporal
+        create_temp_table_query = f"""
+        CREATE TEMP TABLE temp_table AS
+        SELECT *, ROW_NUMBER() OVER(
+            PARTITION BY {", ".join(columns)} ORDER BY {columns[0]}
+        ) AS row_num
+        FROM "{REDSHIFT_SCHEMA}"."{redshift_table}";
         """
-        wr.redshift.execute_sql(delete_query, con=conn)
-        print(f"Duplicados eliminados exitosamente en {REDSHIFT_SCHEMA}.{redshift_table}.")
 
+        # Paso 2: Eliminar duplicados usando la tabla temporal
+        delete_duplicates_query = f"""
+        DELETE FROM "{REDSHIFT_SCHEMA}"."{redshift_table}"
+        USING temp_table
+        WHERE "{REDSHIFT_SCHEMA}"."{redshift_table}".{columns[0]} = temp_table.{columns[0]}
+        AND temp_table.row_num > 1;
+        """
+
+        # Paso 3: Eliminar la tabla temporal
+        drop_temp_table_query = "DROP TABLE temp_table;"
+
+        # Ejecutar los comandos de forma secuencial
+        cursor = conn.cursor()
+        cursor.execute(create_temp_table_query)
+        cursor.execute(delete_duplicates_query)
+        cursor.execute(drop_temp_table_query)
+        conn.commit()
+        cursor.close()
     except Exception as e:
         raise Exception(f"Error en la limpieza de duplicados en Redshift: {e}")
     

@@ -1,5 +1,4 @@
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
 import os
 from datetime import datetime, timedelta
 import redshift_connector
@@ -21,12 +20,16 @@ conn_params = {
 def actualizar_dim_fecha():
     try:
         # Obtener la fecha más reciente de la tabla dim_fecha usando awswrangler
-        query = f"SELECT MAX(fecha_id) AS max_fecha FROM {REDSHIFT_SCHEMA}.{REDSHIFT_TABLE};"
+        query = f'SELECT MAX("fecha_dato") AS max_fecha FROM {REDSHIFT_SCHEMA}.{REDSHIFT_TABLE};'
         # Se establece la conexión
         conn = redshift_connector.connect(**conn_params)
         df_max_fecha = wr.redshift.read_sql_query(query, con=conn)  
         
+        # Si la tabla está vacía, establecer una fecha de inicio predeterminada
         max_fecha = df_max_fecha['max_fecha'].iloc[0]
+        if pd.isna(max_fecha):
+            max_fecha = datetime(2024, 10, 1).date()  # Fecha de inicio predeterminada
+
 
         # Si la fecha más reciente es anterior a hoy, agregar nuevas fechas
         hoy = datetime.now().date()
@@ -37,7 +40,7 @@ def actualizar_dim_fecha():
             data = []
             for fecha in fechas:
                 data.append({
-                    'fecha_id': fecha,
+                    'fecha_dato': fecha,
                     'año': fecha.year,
                     'mes': fecha.month,
                     'nombre_mes': fecha.strftime('%B'),
@@ -61,8 +64,8 @@ def actualizar_dim_fecha():
         
     except Exception as e:
         print(f"Error en la conexión o actualización de la tabla: {e}")
-        
-        
-if __name__ == "__main__":
-    actualizar_dim_fecha()
 
+    finally:
+        if conn is not None:
+            conn.close()       
+        

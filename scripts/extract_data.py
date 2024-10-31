@@ -3,13 +3,27 @@ import requests
 import pandas as pd
 from airflow.exceptions import AirflowSkipException
 
-DATA_PATH=os.path.dirname(__file__)
 
-def extract_data(output_parquet: str):
+def extract_data():
+    """
+    Extrae datos de la API del BCRA y los convierte en un DataFrame de pandas.
+
+    Raises:
+        Exception: Si la solicitud a la API falla o si el resultado de la respuesta es un código de error.
+        AirflowSkipException: Si el DataFrame resultante está vacío.
+
+    Returns:
+        pd.DataFrame: DataFrame con los datos extraídos de la API.
+    """
     
-    #Creo objeto url para guardar el https de la API del BCRA y realizo un request.
+    #Creo objeto url para guardar el https de la API del BCRA 
     url = "https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables"
-    response = requests.get(url, verify=False)
+    
+    #Se realiza el request generando una excepción si hay error.
+    try:
+        response = requests.get(url, verify=False)
+    except requests.exceptions.RequestException as e:
+        raise Exception(f"Error al conectar con la API  del BCRA: {e}")
     
     #Se verifica que la solicitud haya sido exitosa
     if response.status_code !=200: #200 es el código exitoso de la consulta
@@ -21,22 +35,9 @@ def extract_data(output_parquet: str):
     #Convierto en data frame al objeto 'results' descartando el 'status_code' que no es importante para el análisis 
     df = pd.DataFrame(data['results'])
 
-    #Armo la ruta llamando al directorio
-    path = os.path.join(output_parquet, 'data.parquet')
-    
-    #Guardo el archivo parquet
-    df.to_parquet(path)
-   
-   #Chequeo con airflow que el data frame no este vacío (podría agregarse como test?)
+    #Chequeo con airflow que el data frame no este vacío (podría agregarse como test?)
     if df.empty:
         raise AirflowSkipException
    
-   #Realizo una impresión para ver el- path y cierro la función de extracción pidiendole que me devuelva el path
-    print(f"Data extraída y guardada en {path}")
-   
-    return path
-
-#Si se llama extract_data como módulo, se corre la función
-if __name__ == "__main__":
-    extract_data(DATA_PATH)
+    return df
 

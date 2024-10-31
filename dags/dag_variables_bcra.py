@@ -20,9 +20,8 @@ conn_params = {
     'port': os.getenv('REDSHIFT_PORT'),
 }
 
-DATA_PATH=os.path.dirname(os.path.realpath(__file__)) 
 REDSHIFT_TABLE = "fact_table"
-columns = ["variable_id", "fecha", "valor", "fecha_dato"]
+#columns = ["variable_id", "fecha", "valor", "fecha_dato"]
 
 with DAG(
     'etl_redshift_dag_variables_bcra',
@@ -35,7 +34,7 @@ with DAG(
     },
     description='pipeline ETL para cargar principales variables BCRA a Redshift',
     schedule_interval='1 0 * * 2-6',
-    start_date= datetime(2024, 10, 23),
+    start_date= datetime(2024, 10, 28),
     catchup=True
 ) as dag:
     
@@ -43,26 +42,29 @@ with DAG(
     extract_task = PythonOperator(
         task_id='extract_data',
         python_callable=extract_data,
-        op_kwargs={'output_parquet': DATA_PATH}
     )
 
     # Tarea 2: Transformar data
+    def transform_task_callable(**kwargs):
+        df = kwargs['ti'].xcom_pull(task_ids='extract_data')
+        return transform_data(df)
+
     transform_task = PythonOperator(
         task_id='transform_data',
-        python_callable=transform_data,
-        op_kwargs={'input_parquet': os.path.join(DATA_PATH,'data.parquet'),
-                   'output_csv': os.path.join(DATA_PATH, 'transfomed_data.csv')}
+        python_callable=transform_task_callable,
+        provide_context=True
     )
 
     # Tarea 3: Cargar data
+    def load_task_callable(**kwargs):
+        df_transformado = kwargs['ti'].xcom_pull(task_ids='transform_data')
+        load_to_redshift(df_transformado, conn_params)
+
+
     load_task = PythonOperator(
         task_id='load_data',
-        python_callable=load_to_redshift,
-        op_kwargs={
-            'transformed_csv': os.path.join(DATA_PATH, 'transfomed_data.csv'),
-            'redshift_table': REDSHIFT_TABLE,
-            'conn_params': conn_params
-        },
+        python_callable=load_task_callable,
+        provide_context=True
     )
 
     # Tarea 4: Actualizar la tabla de las fechas
@@ -71,16 +73,6 @@ with DAG(
         python_callable=actualizar_dim_fecha,
     )
 
-    # Tarea 5: Limpieza duplicados
-    limpieza_duplicados_task = PythonOperator(
-        task_id='limpieza_duplicados',
-        python_callable=limpieza_duplicados,
-         op_kwargs={
-            'redshift_table': REDSHIFT_TABLE,
-            'conn_params': conn_params,
-            'columns': columns
-        },
-    )
-
+    
     #Seteando el orden de tareas
-    actualizar_fecha_task >> extract_task >> transform_task >> load_task >> limpieza_duplicados_task
+    actualizar_fecha_task >> extract_task >> transform_task >> load_task 

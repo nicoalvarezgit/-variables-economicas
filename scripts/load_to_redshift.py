@@ -3,12 +3,11 @@ from dotenv import load_dotenv
 import redshift_connector
 import awswrangler as wr
 import pandas as pd
-from scripts import extract_data, transform_data
+
 
 # Se cargan las variables del archivo .env
 load_dotenv()
 
-DATA_PATH=os.path.join(os.path.dirname(__file__), 'transformed_data.csv')
 REDSHIFT_TABLE = "fact_table"
 REDSHIFT_SCHEMA = "2024_nicolas_alvarez_julia_schema"
 
@@ -22,9 +21,17 @@ conn_params = {
 }
 
 
-def load_to_redshift(transformed_csv: str, redshift_table: str, conn_params: dict): 
-    #Cargo la data transformada del archivo parquet
-    df= pd.read_csv(transformed_csv)
+def load_to_redshift(df_transformado: pd.DataFrame, conn_params: dict): 
+    """
+    Carga el DataFrame transformado a la tabla fact_table en Redshift.
+
+    Args:
+        df_transformado (pd.DataFrame): DataFrame transformado.
+        conn_params (dict): Parámetros personales de conexión a Redshift.
+
+    Raises:
+        Exception: Si ocurre un error de conexión o carga de datos.
+    """
 
     try:
         # Se establece la conexión
@@ -32,7 +39,7 @@ def load_to_redshift(transformed_csv: str, redshift_table: str, conn_params: dic
 
         #Cargo la data al Redshift table
         wr.redshift.to_sql(
-            df=df,
+            df=df_transformado,
             con=conn,
             table=REDSHIFT_TABLE, 
             schema=REDSHIFT_SCHEMA, 
@@ -52,11 +59,3 @@ def load_to_redshift(transformed_csv: str, redshift_table: str, conn_params: dic
             conn.close()
     
  
-def main(data_path: str, redshift_table: str, conn_params: dict): #redshift_conn_string: str
-    output_path = extract_data(data_path)
-    transformed_csv = transform_data(output_path, data_path)
-    load_to_redshift(transformed_csv, redshift_table, conn_params)
-
-#Si se llama load_to_redshift como módulo, se corre la función
-if __name__ == "__main__":
-    load_to_redshift(DATA_PATH, REDSHIFT_TABLE, conn_params)
