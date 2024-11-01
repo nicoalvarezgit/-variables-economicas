@@ -3,13 +3,12 @@ from dotenv import load_dotenv
 import redshift_connector
 import awswrangler as wr
 import pandas as pd
-from scripts import extract_data, transform_data
+from typing import Any, Dict
 
 # Se cargan las variables del archivo .env
 load_dotenv()
 
-DATA_PATH=os.path.join(os.path.dirname(__file__), 'transformed_data_fed.csv')
-REDSHIFT_TABLE = "redshift_table"
+destination_table = "fact_table"
 REDSHIFT_SCHEMA = "2024_nicolas_alvarez_julia_schema"
 
 # Parámetros de conexión
@@ -22,9 +21,23 @@ conn_params = {
 }
 
 
-def load_to_redshift(transformed_csv: str, redshift_table: str, conn_params: dict): 
-    #Cargo la data transformada del archivo parquet
-    df= pd.read_csv(transformed_csv)
+def load_to_redshift_fed(ti: Any, destination_table: str, conn_params: dict[str, str]) -> None: 
+    """Carga los datos transformados a la fact_table de Redshift.
+
+    Args:
+        ti (Any): `TaskInstance` de Airflow para obtener el DataFrame desde xcom.
+        destination_table (str): Referencia a la fact_table en Redshift.
+        conn_params (Dict[str, str]): Parámetros de conexión a la base de datos Redshift.
+
+    Raises:
+        Exception: Si ocurre un error en la conexión o en la carga de datos a Redshift.
+    """
+    
+    ## Obtener el DataFrame transformado desde xcom
+    data = ti.xcom_pull(task_ids='transform_data_fed_task', key='transformed_data')
+    if data is None:
+        raise ValueError("No se encontró data transformada en xcom para 'transformed_data'")
+    df= pd.DataFrame(data)
 
     try:
         # Se establece la conexión
@@ -34,7 +47,7 @@ def load_to_redshift(transformed_csv: str, redshift_table: str, conn_params: dic
         wr.redshift.to_sql(
             df=df,
             con=conn,
-            table=redshift_table, 
+            table=destination_table, 
             schema=REDSHIFT_SCHEMA, 
             mode="append",
             use_column_names=True, 
@@ -42,21 +55,12 @@ def load_to_redshift(transformed_csv: str, redshift_table: str, conn_params: dic
             lock=True
         )
 
-        print(f"Datos cargados exitosamente en la tabla {REDSHIFT_SCHEMA}.{redshift_table} en Redshift.")
+        print(f"Datos cargados exitosamente en la tabla {REDSHIFT_SCHEMA}.{destination_table} en Redshift.")
         
     except Exception as e:
-        print(f"Error en la conexión o carga de datos a Redshift: {e}")
+        raise Exception(f"Error en la conexión o carga de datos a Redshift: {e}")
     
     finally:
-        if conn is not None:
+        if conn in locals():
             conn.close()
-    
- 
-def main(data_path: str, redshift_table: str, conn_params: dict): #redshift_conn_string: str
-    output_path = extract_data(data_path)
-    transformed_csv = transform_data(output_path, data_path)
-    load_to_redshift(transformed_csv, redshift_table, conn_params)
-
-#Si se llama load_to_redshift como módulo, se corre la función
-if __name__ == "__main__":
-    load_to_redshift(DATA_PATH, REDSHIFT_TABLE, conn_params)
+            print("Conexión a Redshift cerrada")

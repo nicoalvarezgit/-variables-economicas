@@ -1,0 +1,4 @@
+[2024-10-27T22:19:54.376-0300] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-27T22:19:54.684-0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_redshift_dag_variables_bcra.actualizar_dim_fecha manual__2024-10-28T01:18:28.390525+00:00 [queued]>
+[2024-10-27T22:19:54.855-0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_redshift_dag_variables_bcra.actualizar_dim_fecha manual__2024-10-28T01:18:28.390525+00:00 [queued]>
+[2024-10-27T22:19:54.861-0300] {taskinstance.py:2865} INFO - Starting attempt 1 of 2

@@ -1,0 +1,188 @@
+[2024-10-29T14:04:52.096-0300] {processor.py:186} INFO - Started process (PID=70257) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:04:52.100-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:04:52.106-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:04:52.105-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:04:59.789-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:05:00.317-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:05:00.316-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:05:00.488-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:05:00.488-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:05:00.976-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 8.896 seconds
+[2024-10-29T14:09:23.038-0300] {processor.py:186} INFO - Started process (PID=71404) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:09:23.041-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:09:23.049-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:09:23.048-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:09:25.163-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:09:25.249-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:09:25.248-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:09:25.352-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:09:25.351-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:09:25.499-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 2.478 seconds
+[2024-10-29T14:11:09.749-0300] {processor.py:186} INFO - Started process (PID=71878) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:11:09.753-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:11:09.761-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:11:09.760-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:11:11.304-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:11:11.376-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:11:11.375-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:11:11.461-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:11:11.460-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:11:11.612-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.880 seconds
+[2024-10-29T14:12:24.814-0300] {processor.py:186} INFO - Started process (PID=72209) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:12:24.817-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:12:24.825-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:12:24.824-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:12:25.961-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:12:26.025-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:12:26.024-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:12:26.091-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:12:26.091-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:12:26.219-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.428 seconds
+[2024-10-29T14:13:37.461-0300] {processor.py:186} INFO - Started process (PID=72527) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:13:37.464-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:13:37.470-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:13:37.470-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:13:38.846-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:13:38.912-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:13:38.911-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:13:38.985-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:13:38.984-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:13:39.100-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.651 seconds
+[2024-10-29T14:14:53.231-0300] {processor.py:186} INFO - Started process (PID=72860) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:14:53.234-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:14:53.243-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:14:53.241-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:14:54.259-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:14:54.313-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:14:54.312-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:14:54.400-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:14:54.399-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:14:54.586-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.390 seconds
+[2024-10-29T14:15:58.663-0300] {processor.py:186} INFO - Started process (PID=73152) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:15:58.665-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:15:58.674-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:15:58.673-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:15:59.800-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:15:59.856-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:15:59.856-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:15:59.914-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:15:59.914-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:16:00.120-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.472 seconds
+[2024-10-29T14:17:28.022-0300] {processor.py:186} INFO - Started process (PID=73535) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:17:28.025-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:17:28.032-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:17:28.031-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:17:29.165-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:17:29.225-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:17:29.225-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:17:29.303-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:17:29.303-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:17:29.426-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.427 seconds
+[2024-10-29T14:22:32.860-0300] {processor.py:186} INFO - Started process (PID=74864) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:22:32.863-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:22:32.871-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:22:32.870-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:22:34.314-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:22:34.373-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:22:34.372-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:22:34.477-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:22:34.477-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:22:34.655-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.813 seconds
+[2024-10-29T14:24:11.161-0300] {processor.py:186} INFO - Started process (PID=75298) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:24:11.163-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:24:11.169-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:24:11.168-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:24:12.180-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:24:12.273-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:24:12.273-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:24:12.339-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:24:12.339-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:24:12.466-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.319 seconds
+[2024-10-29T14:25:19.855-0300] {processor.py:186} INFO - Started process (PID=75605) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:25:19.858-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:25:19.863-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:25:19.863-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:25:20.944-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:25:21.002-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:25:21.002-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:25:21.070-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:25:21.070-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:25:21.210-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.369 seconds
+[2024-10-29T14:26:28.788-0300] {processor.py:186} INFO - Started process (PID=75915) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:26:28.792-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:26:28.803-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:26:28.801-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:26:29.810-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:26:29.867-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:26:29.866-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:26:29.965-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:26:29.964-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:26:30.096-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.335 seconds
+[2024-10-29T14:27:38.826-0300] {processor.py:186} INFO - Started process (PID=76229) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:27:38.829-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:27:38.838-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:27:38.838-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:27:39.913-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:27:39.990-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:27:39.989-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:27:40.057-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:27:40.057-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:27:40.175-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.366 seconds
+[2024-10-29T14:28:59.184-0300] {processor.py:186} INFO - Started process (PID=76588) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:28:59.188-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:28:59.201-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:28:59.200-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:29:00.922-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:29:01.007-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:29:01.006-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:29:01.120-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:29:01.118-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:29:01.311-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 2.148 seconds
+[2024-10-29T14:36:47.587-0300] {processor.py:186} INFO - Started process (PID=78607) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:36:47.590-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:36:47.594-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:36:47.593-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:36:49.026-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:36:49.111-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:36:49.110-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:36:49.205-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:36:49.205-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:36:49.338-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.766 seconds
+[2024-10-29T14:38:21.956-0300] {processor.py:186} INFO - Started process (PID=79028) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:38:21.959-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:38:21.964-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:38:21.963-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:38:23.294-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:38:23.349-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:38:23.348-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:38:23.430-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:38:23.429-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:38:23.557-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.616 seconds
+[2024-10-29T14:39:23.024-0300] {processor.py:186} INFO - Started process (PID=79307) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:39:23.026-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:39:23.031-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:39:23.029-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:39:24.422-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:39:24.470-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:39:24.470-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:39:24.536-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:39:24.535-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:39:24.671-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.660 seconds
+[2024-10-29T14:40:25.117-0300] {processor.py:186} INFO - Started process (PID=79591) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:40:25.120-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:40:25.123-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:40:25.122-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:40:26.462-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:40:26.506-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:40:26.505-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:40:26.580-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:40:26.579-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:40:26.836-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.734 seconds
+[2024-10-29T14:41:31.743-0300] {processor.py:186} INFO - Started process (PID=79888) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:41:31.746-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:41:31.750-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:41:31.749-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:41:33.246-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:41:33.347-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:41:33.346-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:41:33.415-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:41:33.414-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:41:33.678-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 1.950 seconds
+[2024-10-29T14:42:57.064-0300] {processor.py:186} INFO - Started process (PID=80274) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:42:57.067-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T14:42:57.072-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:42:57.071-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:43:01.194-0300] {processor.py:925} INFO - DAG(s) 'etl_redshift_dag_variables_fed' retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T14:43:01.284-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:43:01.284-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-29T14:43:01.389-0300] {logging_mixin.py:190} INFO - [2024-10-29T14:43:01.388-0300] {dag.py:4180} INFO - Setting next_dagrun for etl_redshift_dag_variables_fed to 2024-10-26 19:00:00+00:00, run_after=2024-10-29 19:00:00+00:00
+[2024-10-29T14:43:01.582-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 4.548 seconds
+[2024-10-29T17:44:43.124-0300] {processor.py:186} INFO - Started process (PID=80741) to work on /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-29T17:44:43.133-0300] {processor.py:914} INFO - Processing file /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py for tasks to queue
+[2024-10-29T17:44:43.143-0300] {logging_mixin.py:190} INFO - [2024-10-29T17:44:43.141-0300] {dagbag.py:588} INFO - Filling up the DagBag from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-30T19:47:46.671-0300] {logging_mixin.py:190} INFO - [2024-10-30T19:47:46.670-0300] {timeout.py:68} ERROR - Process timed out, PID: 80741
+[2024-10-30T19:48:02.870-0300] {logging_mixin.py:190} INFO - [2024-10-30T19:47:47.498-0300] {dagbag.py:387} ERROR - Failed to import: /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py", line 10, in <module>
+    from scripts import extract_data, transform_data, load_to_redshift, actualizar_dim_fecha, limpieza_duplicados
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/__init__.py", line 3, in <module>
+    from .load_to_redshift import load_to_redshift
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/load_to_redshift.py", line 4, in <module>
+    import awswrangler as wr
+  File "/home/nico/.local/lib/python3.10/site-packages/awswrangler/__init__.py", line 10, in <module>
+    from awswrangler import (
+  File "/home/nico/.local/lib/python3.10/site-packages/awswrangler/athena/__init__.py", line 3, in <module>
+    from awswrangler.athena._executions import (  # noqa
+  File "/home/nico/.local/lib/python3.10/site-packages/awswrangler/athena/_executions.py", line 21, in <module>
+    from ._utils import (
+  File "/home/nico/.local/lib/python3.10/site-packages/awswrangler/athena/_utils.py", line 29, in <module>
+    from awswrangler import _data_types, _utils, catalog, exceptions, s3, sts, typing
+  File "/home/nico/.local/lib/python3.10/site-packages/awswrangler/s3/__init__.py", line 16, in <module>
+    from awswrangler.s3._write_deltalake import to_deltalake
+  File "/home/nico/.local/lib/python3.10/site-packages/awswrangler/s3/_write_deltalake.py", line 21, in <module>
+    deltalake = _utils.import_optional_dependency("deltalake")
+  File "/home/nico/.local/lib/python3.10/site-packages/awswrangler/_utils.py", line 147, in import_optional_dependency
+    module = importlib.import_module(name)
+  File "/usr/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1002, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 945, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1439, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1411, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1544, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 147, in _path_stat
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.10.2/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.10.2/best-practices.html#reducing-dag-complexity, PID: 80741
+[2024-10-30T19:48:03.052-0300] {processor.py:927} WARNING - No viable dags retrieved from /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py
+[2024-10-30T19:48:06.151-0300] {processor.py:208} INFO - Processing /mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_fed.py took 50.724 seconds

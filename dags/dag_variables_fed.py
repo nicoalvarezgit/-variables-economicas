@@ -7,7 +7,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from dotenv import load_dotenv
 
-from scripts import extract_data, transform_data, load_to_redshift, actualizar_dim_fecha
+from scripts import extract_data_fed, transform_data_fed, load_to_redshift_fed, actualizar_dim_fecha
 
 # Se cargan las variables del archivo .env
 load_dotenv()
@@ -20,9 +20,9 @@ conn_params = {
     'port': os.getenv('REDSHIFT_PORT'),
 }
 
+# Tabla de destino
+destination_table = "fact_table"  
 
-DATA_PATH=os.path.dirname(os.path.realpath(__file__)) 
-REDSHIFT_TABLE = "fact_table"
 
 with DAG(
     'etl_redshift_dag_variables_fed',
@@ -35,32 +35,29 @@ with DAG(
     },
     description='pipeline ETL para cargar principales variables FED a Redshift',
     schedule_interval='0 19 * * 2-6',
-    start_date= datetime(2024, 10, 17),
+    start_date= datetime(2024, 10, 29),
     catchup=True
 ) as dag:
     
     # Tarea 1: Extraer data
     extract_task = PythonOperator(
-        task_id='extract_data',
-        python_callable=extract_data,
-        op_kwargs={'output_parquet': DATA_PATH}
+        task_id='extract_data_fed_task',
+        python_callable=extract_data_fed,
+        op_kwargs={'ds': '{{ ds }}'},
     )
 
     # Tarea 2: Transformar data
     transform_task = PythonOperator(
-        task_id='transform_data',
-        python_callable=transform_data,
-        op_kwargs={'input_parquet': os.path.join(DATA_PATH,'data.parquet'),
-                   'output_csv': os.path.join(DATA_PATH, 'transfomed_data.csv')}
+        task_id='transform_data_fed_task',
+        python_callable=transform_data_fed,
     )
 
     # Tarea 3: Cargar data
     load_task = PythonOperator(
-        task_id='load_data',
-        python_callable=load_to_redshift,
+        task_id='load_to_redshift_task',
+        python_callable=load_to_redshift_fed,
         op_kwargs={
-            'transformed_csv': os.path.join(DATA_PATH, 'transfomed_data.csv'),
-            'redshift_table': REDSHIFT_TABLE,
+            'destination_table': destination_table,
             'conn_params': conn_params
         },
     )

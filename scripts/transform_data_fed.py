@@ -1,36 +1,43 @@
-import os
 import pandas as pd
+from typing import Any
 
-DATA_PATH=os.path.dirname(__file__)
+def transform_data_fed(ti: Any) -> None:
+    """Transforma los datos extraídos de la API de la FED y los envía a xcom.
 
-def transform_data_fed(input_csv: str, output_csv: str):
+    Esta función realiza varias operaciones como eliminar columnas innecesarias, renombra y reorganizar el 
+    orden de las columnas, elimina duplicados y luego envía el DataFrame transformado de vuelta a xcom.
+
+    Args:
+        ti (Any): `TaskInstance` de Airflow utilizado para el manejo de xcom.
+
+    Raises:
+        ValueError: Si no se encuentra data en xcom para la clave 'extracted_data'.
+        Exception: Si ocurre un error al enviar los datos transformados a xcom.
+    """
     
-    #Cargo la data cruda del archivo csv
-    df= pd.read_csv(input_csv)
+    #Cargo la data frame con Xcom
+    data=ti.xcom_pull(task_ids='extract_data_fed_task', key='extracted_data')
+    if data is None:
+        raise ValueError("No se encontró data en XCom para 'extracted_data'")
+    df= pd.DataFrame(data)
     
-    # Se reorganiza el DataFrame en función de la fecha del dato
-    df_pivot = df.pivot_table(
-        index=['date','realtime_end'],  
-        columns='series_id',  
-        values='value',  
-        aggfunc='first'  
-    )
+    #Se elimina la columna 'realtime_start'
+    df.drop(['realtime_start'], axis=1, inplace=True)
 
-    df_pivot.reset_index(inplace=True)
-    print(df_pivot)
+    #Se renombran las columnas para que coincidan con las tables
+    df = df.rename(columns={'series_id': 'variable_id', 'realtime_end': 'fecha', 'date': 'fecha_dato', 'value': 'valor'})  # Renombro las columnas
 
-    #Hay una variable (DFF) que tiene datos de más de un día, mientras del resto toma un solo día. Se elimina la fila adelantada.
-    df_pivot=df_pivot.dropna(axis=0,thresh=2)
+    #Se reorganizan las columnas 
+    orden_df=['variable_id','fecha','valor','fecha_dato']
+    df_transformado= df[orden_df]
 
-    #Se guarda el archivo transormado en formato csv
-    df_pivot.to_csv(output_csv, index=False)
+    # Eliminar duplicados
+    df_transformado.drop_duplicates(subset=['fecha_dato', 'variable_id'], inplace=True)
 
-    print(f"Data transformada y guardada en {output_csv}")
-    return output_csv
 
-#Si se llama transform_data como módulo, se corre la función
-if __name__ == "__main__":
-    input_csv= os.path.join(DATA_PATH,'data_fed.csv')
-    output_csv=os.path.join(DATA_PATH,'transformed_data_fed.csv')
-    transform_data_fed(input_csv, output_csv)
-
+    # Se envía el df por xcom 
+    try:
+        ti.xcom_push(key='transformed_data', value=df_transformado.to_dict())
+        print("Datos transformados y enviados por XCom")
+    except Exception as e:
+        raise Exception(f"Error al enviar los datos transformados a xcom: {e}")
