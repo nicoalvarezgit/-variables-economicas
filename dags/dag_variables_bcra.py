@@ -7,7 +7,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from dotenv import load_dotenv
 
-from scripts import extract_data, transform_data, load_to_redshift, actualizar_dim_fecha, limpieza_duplicados
+from scripts import extract_data, transform_data, load_to_redshift, actualizar_dim_fecha
 
 # Se cargan las variables del archivo .env
 load_dotenv()
@@ -21,7 +21,6 @@ conn_params = {
 }
 
 REDSHIFT_TABLE = "fact_table"
-#columns = ["variable_id", "fecha", "valor", "fecha_dato"]
 
 with DAG(
     'etl_redshift_dag_variables_bcra',
@@ -33,12 +32,13 @@ with DAG(
         'retries': 1,
     },
     description='pipeline ETL para cargar principales variables BCRA a Redshift',
-    schedule_interval='1 0 * * 2-6',
-    start_date= datetime(2024, 10, 28),
-    catchup=True
+    schedule_interval='0 19 * * 1-5',
+    start_date= datetime(2024, 10, 30),
+    catchup=False
 ) as dag:
     
     # Tarea 1: Extraer data
+    
     extract_task = PythonOperator(
         task_id='extract_data',
         python_callable=extract_data,

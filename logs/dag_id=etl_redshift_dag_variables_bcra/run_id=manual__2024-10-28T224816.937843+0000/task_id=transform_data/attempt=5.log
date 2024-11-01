@@ -1,0 +1,105 @@
+[2024-10-31T01:44:49.576-0300] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-31T01:44:49.633-0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_redshift_dag_variables_bcra.transform_data manual__2024-10-28T22:48:16.937843+00:00 [queued]>
+[2024-10-31T01:44:49.675-0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_redshift_dag_variables_bcra.transform_data manual__2024-10-28T22:48:16.937843+00:00 [queued]>
+[2024-10-31T01:44:49.680-0300] {taskinstance.py:2865} INFO - Starting attempt 5 of 6
+[2024-10-31T01:44:50.020-0300] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): transform_data> on 2024-10-28 22:48:16.937843+00:00
+[2024-10-31T01:44:50.039-0300] {standard_task_runner.py:72} INFO - Started process 127807 to run task
+[2024-10-31T01:44:50.061-0300] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'etl_redshift_dag_variables_bcra', 'transform_data', 'manual__2024-10-28T22:48:16.937843+00:00', '--job-id', '309', '--raw', '--subdir', 'DAGS_FOLDER/dag_variables_bcra.py', '--cfg-path', '/tmp/tmpi4t9j0no']
+[2024-10-31T01:44:50.075-0300] {standard_task_runner.py:105} INFO - Job 309: Subtask transform_data
+[2024-10-31T01:44:52.436-0300] {task_command.py:467} INFO - Running <TaskInstance: etl_redshift_dag_variables_bcra.transform_data manual__2024-10-28T22:48:16.937843+00:00 [running]> on host DESKTOP-MVFODGC.
+[2024-10-31T01:44:53.493-0300] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_redshift_dag_variables_bcra' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2024-10-28T22:48:16.937843+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-28T22:48:16.937843+00:00'
+[2024-10-31T01:44:53.542-0300] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-31T01:44:53.592-0300] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-31T01:44:53.643-0300] {logging_mixin.py:190} INFO - Current task name:transform_data state:running start_date:2024-10-31 04:44:49.635225+00:00
+[2024-10-31T01:44:53.658-0300] {logging_mixin.py:190} INFO - Dag name:etl_redshift_dag_variables_bcra and current dag run status:running
+[2024-10-31T01:44:53.662-0300] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-31T01:44:53.758-0300] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 56, in transform_task_callable
+    return transform_data(df)
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/transform_data.py", line 18, in transform_data
+    df.drop(['cdSerie','descripcion'], axis=1, inplace=True)
+  File "/home/nico/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 5581, in drop
+    return super().drop(
+  File "/home/nico/.local/lib/python3.10/site-packages/pandas/core/generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/home/nico/.local/lib/python3.10/site-packages/pandas/core/generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/home/nico/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['cdSerie', 'descripcion'] not found in axis"
+[2024-10-31T01:44:53.839-0300] {logging_mixin.py:190} INFO - Task instance in failure state
+[2024-10-31T01:44:53.847-0300] {logging_mixin.py:190} INFO - Task start:2024-10-31 04:44:49.635225+00:00 end:2024-10-31 04:44:53.837525+00:00 duration:4.2023
+[2024-10-31T01:44:53.852-0300] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): transform_data> dag:<DAG: etl_redshift_dag_variables_bcra> dagrun:<DagRun etl_redshift_dag_variables_bcra @ 2024-10-28 22:48:16.937843+00:00: manual__2024-10-28T22:48:16.937843+00:00, state:running, queued_at: 2024-10-31 04:23:45.851591+00:00. externally triggered: True>
+[2024-10-31T01:44:53.856-0300] {logging_mixin.py:190} INFO - Failure caused by "['cdSerie', 'descripcion'] not found in axis"
+[2024-10-31T01:44:53.863-0300] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_redshift_dag_variables_bcra, task_id=transform_data, run_id=manual__2024-10-28T22:48:16.937843+00:00, execution_date=20241028T224816, start_date=20241031T044449, end_date=20241031T044453
+[2024-10-31T01:44:54.062-0300] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-31T01:44:54.103-0300] {standard_task_runner.py:124} ERROR - Failed to execute job 309 for task transform_data ("['cdSerie', 'descripcion'] not found in axis"; 127807)
+Traceback (most recent call last):
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/nico/.local/lib/python3.10/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/dag_variables_bcra.py", line 56, in transform_task_callable
+    return transform_data(df)
+  File "/mnt/c/Users/Nicolas/OneDrive - BCRA/Cursos/Python Data Application (ITBA)/variables-economicas/dags/../scripts/transform_data.py", line 18, in transform_data
+    df.drop(['cdSerie','descripcion'], axis=1, inplace=True)
+  File "/home/nico/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 5581, in drop
+    return super().drop(
+  File "/home/nico/.local/lib/python3.10/site-packages/pandas/core/generic.py", line 4788, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/home/nico/.local/lib/python3.10/site-packages/pandas/core/generic.py", line 4830, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/home/nico/.local/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 7070, in drop
+    raise KeyError(f"{labels[mask].tolist()} not found in axis")
+KeyError: "['cdSerie', 'descripcion'] not found in axis"
+[2024-10-31T01:44:54.442-0300] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-10-31T01:44:55.074-0300] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2024-10-31T01:44:55.137-0300] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-31T01:44:55.158-0300] {local_task_job_runner.py:245} INFO - ::endgroup::

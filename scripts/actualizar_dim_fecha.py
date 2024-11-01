@@ -20,7 +20,7 @@ conn_params = {
 def actualizar_dim_fecha():
     try:
         # Obtener la fecha más reciente de la tabla dim_fecha usando awswrangler
-        query = f'SELECT MAX("fecha_dato") AS max_fecha FROM {REDSHIFT_SCHEMA}.{REDSHIFT_TABLE};'
+        query = f'SELECT MAX("fecha_dato") AS max_fecha FROM "{REDSHIFT_SCHEMA}".{REDSHIFT_TABLE};'
         # Se establece la conexión
         conn = redshift_connector.connect(**conn_params)
         df_max_fecha = wr.redshift.read_sql_query(query, con=conn)  

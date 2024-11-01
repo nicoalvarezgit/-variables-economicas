@@ -1,0 +1,25 @@
+[2024-11-01T00:13:44.876-0300] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-01T00:13:45.265-0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_redshift_dag_variables_fed.extract_data_fed_task manual__2024-10-31T23:55:02.413360+00:00 [queued]>
+[2024-11-01T00:13:45.583-0300] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_redshift_dag_variables_fed.extract_data_fed_task manual__2024-10-31T23:55:02.413360+00:00 [queued]>
+[2024-11-01T00:13:45.594-0300] {taskinstance.py:2865} INFO - Starting attempt 3 of 4
+[2024-11-01T00:13:45.934-0300] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): extract_data_fed_task> on 2024-10-31 23:55:02.413360+00:00
+[2024-11-01T00:13:45.957-0300] {standard_task_runner.py:72} INFO - Started process 157148 to run task
+[2024-11-01T00:13:45.969-0300] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'etl_redshift_dag_variables_fed', 'extract_data_fed_task', 'manual__2024-10-31T23:55:02.413360+00:00', '--job-id', '376', '--raw', '--subdir', 'DAGS_FOLDER/dag_variables_fed.py', '--cfg-path', '/tmp/tmpc_f6fc8i']
+[2024-11-01T00:13:45.994-0300] {standard_task_runner.py:105} INFO - Job 376: Subtask extract_data_fed_task
+[2024-11-01T00:13:46.273-0300] {task_command.py:467} INFO - Running <TaskInstance: etl_redshift_dag_variables_fed.extract_data_fed_task manual__2024-10-31T23:55:02.413360+00:00 [running]> on host DESKTOP-MVFODGC.
+[2024-11-01T00:13:46.667-0300] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_redshift_dag_variables_fed' AIRFLOW_CTX_TASK_ID='extract_data_fed_task' AIRFLOW_CTX_EXECUTION_DATE='2024-10-31T23:55:02.413360+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-31T23:55:02.413360+00:00'
+[2024-11-01T00:13:46.672-0300] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-11-01T00:13:46.680-0300] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-11-01T00:13:46.685-0300] {logging_mixin.py:190} INFO - Current task name:extract_data_fed_task state:running start_date:2024-11-01 03:13:45.319319+00:00
+[2024-11-01T00:13:46.690-0300] {logging_mixin.py:190} INFO - Dag name:etl_redshift_dag_variables_fed and current dag run status:running
+[2024-11-01T00:13:46.694-0300] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-01T00:13:54.405-0300] {python.py:240} INFO - Done. Returned value was: None
+[2024-11-01T00:13:54.439-0300] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-01T00:13:54.443-0300] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_redshift_dag_variables_fed, task_id=extract_data_fed_task, run_id=manual__2024-10-31T23:55:02.413360+00:00, execution_date=20241031T235502, start_date=20241101T031345, end_date=20241101T031354
+[2024-11-01T00:13:54.531-0300] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-11-01T00:13:54.534-0300] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-11-01T00:13:54.537-0300] {logging_mixin.py:190} INFO - Dag name:etl_redshift_dag_variables_fed queued_at:2024-11-01 03:04:24.201243+00:00
+[2024-11-01T00:13:54.539-0300] {logging_mixin.py:190} INFO - Task hostname:DESKTOP-MVFODGC. operator:PythonOperator
+[2024-11-01T00:13:54.593-0300] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-01T00:13:54.683-0300] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-01T00:13:54.712-0300] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -2,10 +2,9 @@ import os
 import requests
 import pandas as pd
 from datetime import datetime, timedelta
+from typing import Optional, Dict, Any
 
-##Se publica a las 16_15 (puede ser que esté una o dos horas)
-
-#Defino la página base:
+#Pagina para hacer el request:
 url_base="https://api.stlouisfed.org/fred/series/observations"
 
 series_ids= [
@@ -15,79 +14,80 @@ series_ids= [
 #Llamo a la api_key para hacer la request
 api_key=os.getenv('api_key')
 
-DATA_PATH=os.path.dirname(__file__)
 
-def request_fed_data(series_id: list):
-    hoy = datetime.today().strftime('%Y-%m-%d')
-    anteayer = (datetime.today() - timedelta(days=4)).strftime('%Y-%m-%d')
-    ayer = (datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')
+def request_fed_data(series_id: list, inicio_observacion: str, fin_observacion: str) -> Dict[str, Any]:
+    """Solicita datos de las series de interés de la API de la FED.
+
+    Args:
+        series_id (str): Identificador de la serie de la FED a requerir.
+
+    Returns:
+        Dict[str, Any]: Respuesta de la API en formato JSON.
+
+    Raises:
+        Exception: Avisa si el código de respuesta no es exitoso.
+    """
     params = {
         'series_id': series_id,
         'api_key': api_key,
         'file_type': 'json',
-        'observation_start': anteayer,
-        'observation_end': ayer,
+        'observation_start': inicio_observacion,
+        'observation_end': fin_observacion,
     }
     response = requests.get(url_base, params=params)
     
     # Verificar si la respuesta fue exitosa
     if response.status_code != 200:
         raise Exception(f"Error en la solicitud a la API. Código error: {response.status_code}")
-        
-    data = response.json()
     
-    # Imprimir las claves (keys) del JSON obtenido
-    print(f"Keys for {series_id}: {data.keys()}")
-    
-    return data
+    return response.json()
 
 
+def process_to_dataframe(data: Dict[str, Any], series_id: str) -> Optional[pd.DataFrame]:
+    """Convierte los datos de la API en un DataFrame de pandas.
 
-def process_to_dataframe(data, series_id):
-    # Verificar si existe el campo 'observations' en los datos
+    Args:
+        data (Dict[str, Any]): Datos obtenidos de la API en formato JSON.
+        series_id (str): Identificador de la serie de la FED.
+
+    Returns:
+        Optional[pd.DataFrame]: DataFrame con las observaciones de la serie, o None si no hay observaciones.
+    """
+    # Verificar que exista el campo 'observations' en los datos
     if 'observations' not in data:
-        print(f"No 'observations' field found for series {series_id}")
         return None
     
-    # Extraer las observaciones de los datos JSON
-    observations = data['observations']
+    # Convierto las observaciones en un DataFrame
+    df = pd.DataFrame(data['observations'])
     
-    # Imprimir las primeras observaciones para revisar su estructura
-    print(f"Observations for {series_id}: {observations[:5]}")
-    
-    # Convertir las observaciones en un DataFrame
-    df = pd.DataFrame(observations)
-    
-    # Mostrar los nombres de las columnas del DataFrame
-    print(f"Columns in DataFrame for {series_id}: {df.columns}")
+    df['series_id']=series_id
     
     return df
 
-if __name__ == "__main__":
+
+def extract_data_fed(ds: str, **kwargs) -> None:
+    """Extrae datos de la API de la FED para las series requeridas y envía el resultado a xcom.
+
+    Args:
+        **kwargs: Argumentos adicionales, principalmente `ti` de Airflow para manejar xcom.
+
+    Raises:
+        ValueError: Si no se obtuvo ningún dato de la API.
+    """
+    execution_date=datetime.strptime(ds, '%Y-%m-%d')
+    inicio_observacion= (execution_date - timedelta(days=2)).strftime('%Y-%m-%d')
+    fin_observacion= (execution_date - timedelta(days=1)).strftime('%Y-%m-%d')
     all_dataframes = []  # Lista para almacenar los DataFrames
 
     for series_id in series_ids:
-        data = request_fed_data(series_id)
+        data = request_fed_data(series_id,inicio_observacion, fin_observacion)
+        df= process_to_dataframe(data, series_id)
         
-        if data is not None:
-            df = process_to_dataframe(data, series_id)
-            if df is not None and not df.empty:
-                print(f"Data for {series_id} on {datetime.today().strftime('%Y-%m-%d')}:")
-                                
-                # Agregar una columna con el identificador de la serie
-                df['series_id'] = series_id
-                
-                # Añadir el DataFrame a la lista
-                all_dataframes.append(df)
-            else:
-                print(f"No data found for {series_id} on {datetime.today().strftime('%Y-%m-%d')}")
-
-    # Concatenar todos los DataFrames en uno solo
+        if df is not None and not df.empty:
+            all_dataframes.append(df)
     if all_dataframes:
         final_df = pd.concat(all_dataframes, ignore_index=True)
-             
-        final_df.to_csv(os.path.join(DATA_PATH, 'data_fed.csv'))
-        print("Datos exportados a CSV exitosamente")
-        print("Final concatenated DataFrame:")
-        print(final_df)
+        kwargs['ti'].xcom_push(key='extracted_data', value=final_df.to_dict())
+    else:
+        raise ValueError("No se extrajo data de la API")
         

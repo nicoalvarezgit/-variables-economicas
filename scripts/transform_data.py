@@ -12,7 +12,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
         pd.DataFrame: DataFrame transformado listo para la carga.
     """
     # Se formatean los valores de la columna 'fecha' en formato datetime y se le saca la hora
-    df['fecha'] = pd.to_datetime(df['fecha'], errors='coerce')  
+    df['fecha_dato'] = pd.to_datetime(df['fecha'], errors='coerce')  
     
     #Se eliminan las columnas 'cdSerie' y 'descripcion'
     df.drop(['cdSerie','descripcion'], axis=1, inplace=True)
@@ -24,8 +24,12 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
     df_transformado = df[~df['variable_id'].isin(variables_a_eliminar)]
 
     # Encontrar la fecha más reciente en la columna 'fecha' y se pasa a la una nueva columna 'fecha dato' con la misma fecha en todas las filas
-    fecha_mas_reciente = df_transformado['fecha'].max()
-    df_transformado['fecha_dato'] = fecha_mas_reciente
+    fecha_mas_reciente = df_transformado['fecha_dato'].max()
+    df_transformado['fecha'] = fecha_mas_reciente
+
+    #Se reordenan las columnas para coincidir con la fact_table
+    orden_df=['variable_id','fecha','valor','fecha_dato']
+    df_transformado= df[orden_df]
 
     return df_transformado
 
