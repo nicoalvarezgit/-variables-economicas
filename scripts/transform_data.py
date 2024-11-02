@@ -21,7 +21,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
 
     #se forma una tupla con los valores de los ids de variables que no interesan al análisis.
     variables_a_eliminar = [4, 30, 31, 32, 40, 43]  
-    df_transformado = df[~df['variable_id'].isin(variables_a_eliminar)]
+    df_transformado = df.loc[~df['variable_id'].isin(variables_a_eliminar)].copy()
 
     # Encontrar la fecha más reciente en la columna 'fecha' y se pasa a la una nueva columna 'fecha dato' con la misma fecha en todas las filas
     fecha_mas_reciente = df_transformado['fecha_dato'].max()
@@ -29,7 +29,7 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
 
     #Se reordenan las columnas para coincidir con la fact_table
     orden_df=['variable_id','fecha','valor','fecha_dato']
-    df_transformado= df[orden_df]
+    df_transformado= df_transformado[orden_df]
 
     return df_transformado
 
