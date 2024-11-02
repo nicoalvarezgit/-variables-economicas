@@ -76,7 +76,7 @@ def extract_data_fed(**context) -> None:
     """
     ds=context['ds']
     execution_date=datetime.strptime(ds, '%Y-%m-%d')
-    inicio_observacion= (execution_date - timedelta(days=2)).strftime('%Y-%m-%d')
+    inicio_observacion= (execution_date - timedelta(days=1)).strftime('%Y-%m-%d')
     fin_observacion= (execution_date - timedelta(days=1)).strftime('%Y-%m-%d')
     
     all_dataframes = []  # Lista para almacenar los DataFrames

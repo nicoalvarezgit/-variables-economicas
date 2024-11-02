@@ -20,9 +20,9 @@ def test_load_to_redshift():
     }
     
     # Patch de wr.redshift.to_sql para evitar la conexión real y verificar los argumentos
-    with patch("awswrangler.redshift.to_sql") as mock_to_sql, patch("redshift_connector.connect") as mock_connect:
-        mock_connect.return_value = MagicMock()
+    with patch("awswrangler.redshift.to_sql") as mock_to_sql, patch("redshift_connector.connect", return_value=MagicMock()) as mock_connect:
         mock_to_sql.return_value = None  
+        conn = mock_connect.return_value 
 
         # Ejecutar la función de carga
         load_to_redshift(df_transformado, conn_params)
@@ -30,7 +30,7 @@ def test_load_to_redshift():
         # Verificar que to_sql fue llamado una vez con los parámetros correctos
         mock_to_sql.assert_called_once_with(
             df=df_transformado,
-            con=MagicMock(),  # la conexión es un mock
+            con=conn,  
             table="fact_table",  
             schema="2024_nicolas_alvarez_julia_schema",  
             mode="append",
