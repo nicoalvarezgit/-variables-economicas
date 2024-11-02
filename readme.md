@@ -1,8 +1,8 @@
-###Trabajo práctico de variables económicas
+#Trabajo práctico de Variables Económicas
 
-##Introducción
+##Descripción general.
 
-Este proyecto genera ingestas diarias del Banco Central de la República Argentina y la Reserva Federal de los Estados Unidos. Se conecta con las APIs públicas de dichas instituciones, extrayendo los valores diarios de las principales variables monetarias.
+Este proyecto genera ingestas diarias del Banco Central de la República Argentina y la Reserva Federal de los Estados Unidos. Se conecta con las APIs públicas de dichas instituciones, extrayendo los valores diarios de las principales variables monetarias. Esos datos diarios son transformados y cargados en un esquema estrella armado en un Data Warehouse en Redshift
 
 ##Desarrollo del proyecto.
 

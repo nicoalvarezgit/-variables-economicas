@@ -65,7 +65,7 @@ def process_to_dataframe(data: Dict[str, Any], series_id: str) -> Optional[pd.Da
     return df
 
 
-def extract_data_fed(ds: str, **kwargs) -> None:
+def extract_data_fed(**context) -> None:
     """Extrae datos de la API de la FED para las series requeridas y envía el resultado a xcom.
 
     Args:
@@ -74,11 +74,12 @@ def extract_data_fed(ds: str, **kwargs) -> None:
     Raises:
         ValueError: Si no se obtuvo ningún dato de la API.
     """
+    ds=context['ds']
     execution_date=datetime.strptime(ds, '%Y-%m-%d')
     inicio_observacion= (execution_date - timedelta(days=2)).strftime('%Y-%m-%d')
     fin_observacion= (execution_date - timedelta(days=1)).strftime('%Y-%m-%d')
+    
     all_dataframes = []  # Lista para almacenar los DataFrames
-
     for series_id in series_ids:
         data = request_fed_data(series_id,inicio_observacion, fin_observacion)
         df= process_to_dataframe(data, series_id)
@@ -87,7 +88,7 @@ def extract_data_fed(ds: str, **kwargs) -> None:
             all_dataframes.append(df)
     if all_dataframes:
         final_df = pd.concat(all_dataframes, ignore_index=True)
-        kwargs['ti'].xcom_push(key='extracted_data', value=final_df.to_dict())
+        context['ti'].xcom_push(key='extracted_data', value=final_df.to_dict())
     else:
         raise ValueError("No se extrajo data de la API")
         

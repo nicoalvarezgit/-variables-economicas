@@ -43,7 +43,7 @@ with DAG(
     extract_task = PythonOperator(
         task_id='extract_data_fed_task',
         python_callable=extract_data_fed,
-        op_kwargs={'ds': '{{ ds }}'},
+        provide_context=True,
     )
 
     # Tarea 2: Transformar data
