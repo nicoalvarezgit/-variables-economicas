@@ -39,6 +39,10 @@ def load_to_redshift_fed(ti: Any, destination_table: str, conn_params: dict[str,
         raise ValueError("No se encontró data transformada en xcom para 'transformed_data'")
     df= pd.DataFrame(data)
 
+    numeric_columns = ['valor']  # Cambia según los nombres de las columnas numéricas en tu DataFrame
+    for col in numeric_columns:
+        df[col] = pd.to_numeric(df[col], errors='coerce')
+        
     try:
         # Se establece la conexión
         conn = redshift_connector.connect(**conn_params)

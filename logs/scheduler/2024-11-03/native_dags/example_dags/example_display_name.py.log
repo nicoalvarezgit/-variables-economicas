@@ -61,3 +61,101 @@
 [2024-11-03T00:14:54.888-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:14:54.887-0300] {dag.py:3239} INFO - Sync 1 DAGs
 [2024-11-03T00:14:54.944-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:14:54.943-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
 [2024-11-03T00:14:55.155-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.587 seconds
+[2024-11-03T00:25:48.692-0300] {processor.py:186} INFO - Started process (PID=221841) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:25:48.703-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T00:25:48.708-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:25:48.707-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:25:48.756-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:25:48.954-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:25:48.953-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T00:25:49.076-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:25:49.075-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T00:25:49.302-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.648 seconds
+[2024-11-03T00:36:19.316-0300] {processor.py:186} INFO - Started process (PID=221992) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:36:19.320-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T00:36:19.333-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:36:19.332-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:36:19.372-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:36:19.458-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:36:19.457-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T00:36:19.520-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:36:19.520-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T00:36:19.659-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.395 seconds
+[2024-11-03T00:39:33.641-0300] {processor.py:186} INFO - Started process (PID=222085) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:39:33.645-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T00:39:33.652-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:39:33.650-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:39:33.672-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:39:33.752-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:39:33.751-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T00:39:33.795-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:39:33.794-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T00:39:33.940-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.335 seconds
+[2024-11-03T00:42:13.856-0300] {processor.py:186} INFO - Started process (PID=222173) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:42:13.858-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T00:42:13.862-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:42:13.861-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:42:13.888-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:42:13.949-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:42:13.948-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T00:42:13.998-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:42:13.998-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T00:42:14.122-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.280 seconds
+[2024-11-03T00:45:54.285-0300] {processor.py:186} INFO - Started process (PID=222271) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:45:54.288-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T00:45:54.293-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:45:54.292-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:45:54.312-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:45:54.370-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:45:54.369-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T00:45:54.706-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:45:54.705-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T00:45:54.996-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.732 seconds
+[2024-11-03T00:49:53.288-0300] {processor.py:186} INFO - Started process (PID=222375) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:49:53.290-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T00:49:53.294-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:49:53.293-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:49:53.306-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:49:53.358-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:49:53.357-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T00:49:53.390-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:49:53.389-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T00:49:53.499-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.224 seconds
+[2024-11-03T00:54:12.819-0300] {processor.py:186} INFO - Started process (PID=222468) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:54:12.827-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T00:54:12.842-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:54:12.841-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:54:12.871-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:54:12.937-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:54:12.935-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T00:54:12.988-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:54:12.987-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T00:54:13.163-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.394 seconds
+[2024-11-03T00:58:16.904-0300] {processor.py:186} INFO - Started process (PID=222569) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:58:16.907-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T00:58:16.912-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:58:16.911-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:58:16.940-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T00:58:17.015-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:58:17.014-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T00:58:17.062-0300] {logging_mixin.py:190} INFO - [2024-11-03T00:58:17.061-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T00:58:17.212-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.329 seconds
+[2024-11-03T01:01:09.913-0300] {processor.py:186} INFO - Started process (PID=222664) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:01:09.915-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T01:01:09.919-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:01:09.918-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:01:09.936-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:01:10.011-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:01:10.011-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T01:01:10.063-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:01:10.062-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T01:01:10.239-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.339 seconds
+[2024-11-03T01:04:01.232-0300] {processor.py:186} INFO - Started process (PID=222754) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:04:01.236-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T01:04:01.242-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:04:01.241-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:04:01.265-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:04:01.330-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:04:01.330-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T01:04:01.364-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:04:01.363-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T01:04:01.512-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.313 seconds
+[2024-11-03T01:07:01.673-0300] {processor.py:186} INFO - Started process (PID=222848) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:07:01.677-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T01:07:01.684-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:07:01.683-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:07:01.705-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:07:01.800-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:07:01.799-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T01:07:01.860-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:07:01.859-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T01:07:02.020-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.381 seconds
+[2024-11-03T01:10:02.170-0300] {processor.py:186} INFO - Started process (PID=222936) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:10:02.183-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T01:10:02.191-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:10:02.190-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:10:02.237-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:10:02.406-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:10:02.406-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T01:10:02.496-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:10:02.496-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T01:10:02.667-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.535 seconds
+[2024-11-03T01:13:28.179-0300] {processor.py:186} INFO - Started process (PID=223029) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:13:28.183-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T01:13:28.195-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:13:28.189-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:13:28.232-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:13:28.450-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:13:28.447-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T01:13:28.579-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:13:28.579-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T01:13:28.782-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.652 seconds
+[2024-11-03T01:20:14.773-0300] {processor.py:186} INFO - Started process (PID=223146) to work on /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:20:14.777-0300] {processor.py:914} INFO - Processing file /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py for tasks to queue
+[2024-11-03T01:20:14.784-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:20:14.782-0300] {dagbag.py:588} INFO - Filling up the DagBag from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:20:14.804-0300] {processor.py:925} INFO - DAG(s) 'example_display_name' retrieved from /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py
+[2024-11-03T01:20:14.860-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:20:14.859-0300] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-11-03T01:20:14.903-0300] {logging_mixin.py:190} INFO - [2024-11-03T01:20:14.902-0300] {dag.py:4180} INFO - Setting next_dagrun for example_display_name to None, run_after=None
+[2024-11-03T01:20:15.085-0300] {processor.py:208} INFO - Processing /home/nico/.local/lib/python3.10/site-packages/airflow/example_dags/example_display_name.py took 0.331 seconds
