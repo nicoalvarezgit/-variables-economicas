@@ -19,6 +19,7 @@ def fetch_variable_names():
     query = """
     SELECT variable_id, nombre_variable
     FROM "2024_nicolas_alvarez_julia_schema".dim_variable
+    WHERE fuente = 'FED'
     """
     with redshift_connector.connect(
         host=conn_params['host'],
@@ -42,10 +43,16 @@ def fetch_data(series_ids, start_date, end_date):
     query = f"""
     SELECT fecha_dato, variable_id, valor
     FROM "2024_nicolas_alvarez_julia_schema".fact_table
-    WHERE variable_id IN {series_filter}
-    AND fecha BETWEEN '{start_date}' AND '{end_date}'
-    ORDER BY fecha
+    WHERE variable_id IN (
+        SELECT variable_id
+        FROM "2024_nicolas_alvarez_julia_schema".dim_variable
+        WHERE fuente = 'FED'
+    )
+    AND variable_id IN {series_filter}
+    AND fecha_dato BETWEEN '{start_date}' AND '{end_date}'
+    ORDER BY fecha_dato
     """
+
     with redshift_connector.connect(
         host=conn_params['host'],
         database=conn_params['database'],
@@ -90,7 +97,7 @@ app.layout = html.Div([
 )
 def update_graph(selected_series, start_date, end_date):
     if not selected_series:
-        return px.line()  # Gráfico vacío si no hay selección
+        return px.line(title="Seleccione al menos una variable")  # Gráfico vacío si no hay selección
 
     # Extraer datos desde Redshift
     df = fetch_data(selected_series, start_date, end_date)
@@ -100,7 +107,7 @@ def update_graph(selected_series, start_date, end_date):
 
     # Generar gráfico de líneas
     fig = px.line(df, x="fecha_dato", y="valor", color="nombre_variable",
-                  title="Series de Tiempo Seleccionadas")
+                  title="Series de Tiempo tasas FED")
     fig.update_layout(xaxis_title="Fecha", yaxis_title="Valor")
     
     return fig

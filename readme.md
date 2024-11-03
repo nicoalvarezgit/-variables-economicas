@@ -16,3 +16,6 @@ El proyecto cuenta con dos pipelines, uno para cada fuente de datos. Ambos carga
 Se crearon 2 test unitarios para probar la extraccion y la transformación del pipeline de BCRA, que también se puede realizar con GitHub Actions (está codeado para que se realicen automáticamente cuando se hace un push o un pull request).
 
 
+
+Puerto del dash: http://127.0.0.1:8050
+ctrl+c para salir

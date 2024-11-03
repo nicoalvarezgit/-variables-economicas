@@ -38,7 +38,8 @@ def load_to_redshift_fed(ti: Any, destination_table: str, conn_params: dict[str,
     if data is None:
         raise ValueError("No se encontró data transformada en xcom para 'transformed_data'")
     df= pd.DataFrame(data)
-
+    print("Tipo de datos antes de cargar:", df.dtypes)  # Verifica que 'valor' sea float
+    
     numeric_columns = ['valor']  # Cambia según los nombres de las columnas numéricas en tu DataFrame
     for col in numeric_columns:
         df[col] = pd.to_numeric(df[col], errors='coerce')

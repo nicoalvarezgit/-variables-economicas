@@ -60,6 +60,9 @@ def process_to_dataframe(data: Dict[str, Any], series_id: str) -> Optional[pd.Da
     # Convierto las observaciones en un DataFrame
     df = pd.DataFrame(data['observations'])
     
+    # Asegurar que la columna 'value' se interprete como decimal
+    df['value'] = pd.to_numeric(df['value'], errors='coerce')
+    
     df['series_id']=series_id
     
     return df
@@ -74,11 +77,11 @@ def extract_data_fed(**context) -> None:
     Raises:
         ValueError: Si no se obtuvo ningún dato de la API.
     """
-    # - timedelta(days=1)
+    
     ds=context['ds']
     execution_date=datetime.strptime(ds, '%Y-%m-%d')
-    inicio_observacion= (execution_date).strftime('%Y-%m-%d')
-    fin_observacion= (execution_date).strftime('%Y-%m-%d')
+    inicio_observacion= (execution_date - timedelta(days=1)).strftime('%Y-%m-%d')
+    fin_observacion= (execution_date - timedelta(days=1)).strftime('%Y-%m-%d')
     
     all_dataframes = []  # Lista para almacenar los DataFrames
     for series_id in series_ids:

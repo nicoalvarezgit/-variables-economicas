@@ -19,7 +19,7 @@ def create_fact_table():
     CREATE TABLE IF NOT EXISTS {schema}.fact_table (
         variable_id VARCHAR (50),
         fecha DATE,
-        valor NUMERIC,
+        valor DECIMAL (18,4),
         fecha_dato DATE,
         PRIMARY KEY (fecha_dato, variable_id),
         FOREIGN KEY (fecha_dato) REFERENCES {schema}.dim_fecha (fecha_dato),
