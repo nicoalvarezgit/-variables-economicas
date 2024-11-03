@@ -34,9 +34,9 @@ with DAG(
         'retries': 1,
     },
     description='pipeline ETL para cargar principales variables FED a Redshift',
-    schedule_interval='0 19 * * 2-6',
+    schedule_interval='0 22 * * 1-5',
     start_date= datetime(2024, 10, 29),
-    catchup=True
+    catchup=False
 ) as dag:
     
     # Tarea 1: Extraer data

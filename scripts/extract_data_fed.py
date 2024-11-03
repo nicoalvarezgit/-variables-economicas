@@ -74,10 +74,11 @@ def extract_data_fed(**context) -> None:
     Raises:
         ValueError: Si no se obtuvo ningún dato de la API.
     """
+    # - timedelta(days=1)
     ds=context['ds']
     execution_date=datetime.strptime(ds, '%Y-%m-%d')
-    inicio_observacion= (execution_date - timedelta(days=1)).strftime('%Y-%m-%d')
-    fin_observacion= (execution_date - timedelta(days=1)).strftime('%Y-%m-%d')
+    inicio_observacion= (execution_date).strftime('%Y-%m-%d')
+    fin_observacion= (execution_date).strftime('%Y-%m-%d')
     
     all_dataframes = []  # Lista para almacenar los DataFrames
     for series_id in series_ids:
